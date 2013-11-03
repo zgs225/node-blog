@@ -34,6 +34,7 @@ body {
 .sidebar .main-nav ul li a,
 .sidebar .social-nav ul li a {
   text-decoration: none;
+  letter-spacing: 5px;
   color: #fff;
 }
 .sidebar .main-nav ul li a:hover,
@@ -93,7 +94,4 @@ body {
 }
 .visible-xs .social-nav {
   padding-left: 8em;
-}
-.content {
-  padding: 5px 10px;
 }

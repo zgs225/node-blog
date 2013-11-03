@@ -9,6 +9,9 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
+var ArticleProvider = require('./provider/article').ArticleProvider;
+var articleProvider = new ArticleProvider('localhost', 27017);
+
 var app = express();
 
 // all environments
@@ -31,7 +34,18 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+// home page
+app.get('/', function(req, res) {
+  articleProvider.findAll(function(error, articles) {
+    res.render('index', {title: "我的博文", articles: articles});
+  });
+});
+
+// new blog
+app.get('/blog/new', function(req, res) {
+  res.render('new', {title: '新的日志'});
+});
+
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div.article-new
+        h2= title
+        form.form-horizontal(action='/blog/new', method="post", rule="form")
+            div.form-group
+                label.col-sm-3.control-label(for="name") 标题：
+                div.col-sm-6
+                    input.form-control(type="text", name="name", id="name")
+                div.help-block
+            div.form-group
+                label.col-sm-3.control-label(for="tags") 标签：
+                div.col-sm-6
+                    input.form-control(type="text", name="tags", id="tags", placeholder="用逗号分割，如： 美食， 豆制品")
+                div.help-block
+            div.form-group
+                div.col-sm-12
+                    input.form-group(type="textarea", name="content", id="content", cols="30")
+            div.form-group
+                div.col-sm-offset-3.col-sm-9
+                    btn.btn.btn-default.btn-primary(type="submit") 发表
+

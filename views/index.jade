@@ -1,6 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-
+    div.articles
+        - each article in articles
+            div.article
+                div.article-thumbnail
+                    a(href="/blog/"+article._id)
+                        img(src=article.img, title=article.title)
+                div.article-heading
+                    h3.title= article.title
+                    span.created_at= article.created_at
+                div.article-body= article.content
+                div.article-footer
+                    a(class='btn btn-default btn-info', href='/blog/'+article._id) 详细内容
