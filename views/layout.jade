@@ -1,0 +1,65 @@
+doctype 5
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css', media='screen')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        div.row
+            div.col-md-3.affix.hidden-xs(style="min-height: 100%; height: 100%")
+                div.sidebar
+                    div.profile
+                        img(src='/images/default.jpg')
+                        h1 乐正
+                        small 专注，简单
+                    div.main-nav
+                        ul.nav-list
+                            li.nav-item
+                                a(href='#') 日志
+                            li.nav-item
+                                a(href='#') 归档
+                            li.nav-item
+                                a(href='#') 简介
+                    div.social-nav
+                        ul.nav-list
+                            li.nav-item
+                                a(class='weibo', href='http://weibo.com/zgs225', title='微博') 微博
+                            li.nav-item
+                                a(class='google', href='#', title='谷歌+') 谷歌
+                            li.nav-item
+                                a(class='github', href='https://github.com/zgs225', title='GitHub') GitHub
+                    div.clearfix
+            div.col-md-3.visible-xs
+                div.sidebar
+                    div.profile
+                        img(src='/images/default.jpg')
+                        h1 乐正
+                        small 专注，简单
+                    div.main-nav
+                        ul.nav-list
+                            li.nav-item
+                                a(href='#') 日志
+                            li.nav-item
+                                a(href='#') 归档
+                            li.nav-item
+                                a(href='#') 简介
+                    div.social-nav
+                        ul.nav-list
+                            li.nav-item
+                                a(class='weibo', href='http://weibo.com/zgs225', title='微博') 微博
+                            li.nav-item
+                                a(class='google', href='#', title='谷歌+') 谷歌
+                            li.nav-item
+                                a(class='github', href='#', title='GitHub') GitHub
+                    div.clearfix
+            div.col-md-9.col-md-offset-3
+                div.content
+                    block content
+                div.footer
+                    | Copyright
+                    a(href='http://weibo.com/zgs225') @乐正
+                div.script-block
+                    script(src='/javascript/jquery-2.0.3.min.js')
+                    script(src='/javascript/bootstrap.min.js')

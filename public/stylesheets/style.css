@@ -1,0 +1,99 @@
+body {
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  background-color: #e5e5e5;
+}
+.sidebar {
+  background: #9900cc no-repeat none;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+.sidebar .profile img {
+  width: 160px;
+  height: 160px;
+  margin-top: 1em;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.sidebar .profile small {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.sidebar .main-nav ul,
+.sidebar .social-nav ul {
+  list-style: none;
+  -webkit-padding-start: 0;
+  -moz-padding-start: 0;
+  padding-start: 0;
+}
+.sidebar .main-nav ul li a,
+.sidebar .social-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+.sidebar .main-nav ul li a:hover,
+.sidebar .social-nav ul li a:hover,
+.sidebar .main-nav ul li a:active,
+.sidebar .social-nav ul li a:active {
+  color: #ff0000;
+}
+.sidebar .main-nav ul li {
+  font-size: 18px;
+}
+.sidebar .social-nav li {
+  float: left;
+  margin: 0 5px;
+}
+.sidebar .social-nav li a {
+  text-indent: -9999em;
+  display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  opacity: 0.6;
+  transition: background-color 2s;
+  -moz-transition: background-color 2s;
+  -webkit-transition: background-color 2s;
+  -o-transition: background-color 2s;
+}
+.sidebar .social-nav li .weibo {
+  background: url('/images/weibo.png') center no-repeat #990066;
+  border: solid 1px #990033;
+}
+.sidebar .social-nav li .weibo:hover,
+.sidebar .social-nav li .weibo:active {
+  background-color: #Ee66aA;
+  border: solid 1px #Ee33aA;
+}
+.sidebar .social-nav li .google {
+  background: url('/images/google.png') center no-repeat #cc0000;
+  border: solid 1px #990000;
+}
+.sidebar .social-nav li .google:hover,
+.sidebar .social-nav li .google:active {
+  background-color: #FF0066;
+  border: solid 1px #FF00033;
+}
+.sidebar .social-nav li .github {
+  background: url('/images/github.png') center no-repeat #555555;
+  border: solid 1px #444444;
+}
+.sidebar .social-nav li .github:hover,
+.sidebar .social-nav li .github:active {
+  background-color: #666666;
+  border: solid 1px #555555;
+}
+.hidden-xs .social-nav {
+  padding-left: 6em;
+}
+.visible-xs .social-nav {
+  padding-left: 8em;
+}
+.content {
+  padding: 5px 10px;
+}

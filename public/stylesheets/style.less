@@ -1,0 +1,121 @@
+.circle() {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.transition(@property, @time) {
+  transition: @property @time;
+  -moz-transition: @property @time;
+  -webkit-transition: @property @time;
+  -o-transition: @property @time;
+}
+
+@background-color: #9900CC;
+
+body {
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  background-color: #e5e5e5;
+}
+
+.sidebar {
+  background: @background-color no-repeat none;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  .profile {
+    img {
+      width: 160px;
+      height: 160px;
+      margin-top: 1em;
+      border: 2px solid #fff;
+      .circle;
+    }
+
+    small {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .main-nav, .social-nav {
+    ul {
+      list-style: none;
+      -webkit-padding-start: 0;
+         -moz-padding-start: 0;
+              padding-start: 0;
+
+      li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      li a:hover, li a:active {
+        color: #ff0000;
+      }
+    }
+  }
+
+  .main-nav ul li {
+    font-size: 18px;
+  }
+
+  .social-nav{
+    li {
+      float: left;
+      margin: 0 5px;
+
+      a {
+        text-indent: -9999em;
+        display: inline-block;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        opacity: 0.6;
+        .transition(background-color, 2s);
+      }
+
+      .weibo {
+        background: url('/images/weibo.png') center no-repeat #990066;
+        border: solid 1px #990033;
+      }
+
+      .weibo:hover, .weibo:active {
+        background-color: #Ee66aA;
+        border: solid 1px #Ee33aA;
+      }
+
+      .google {
+        background: url('/images/google.png') center no-repeat #CC0000;
+        border: solid 1px #990000;
+      }
+
+      .google:hover, .google:active {
+        background-color: #FF0066;
+        border: solid 1px #FF00033;
+      }
+
+      .github {
+        background: url('/images/github.png') center no-repeat #555555;
+        border: solid 1px #444444;
+      }
+
+      .github:hover, .github:active {
+        background-color: #666666;
+        border: solid 1px #555555;
+      }
+    }
+  }
+}
+
+.hidden-xs .social-nav {
+  padding-left: 6em;
+}
+
+.visible-xs .social-nav{
+  padding-left: 8em;
+}
+
