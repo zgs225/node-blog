@@ -46,6 +46,33 @@ app.get('/blog/new', function(req, res) {
   res.render('new', {title: '新的日志'});
 });
 
+app.post('/blog/new', function(req, res) {
+  articleProvider.save({
+    title: req.param('title'),
+    content: req.param('content'),
+    img: req.param('image') == null ? '/images/article-heading.jpg' : req.param('image'),
+    tags: req.param('tags').split(/,|，/g)
+  }, function() {
+    res.redirect('/');
+  });
+});
+
+app.get('/blog/:id', function(req, res) {
+  articleProvider.findById(req.params.id, function(error, article) {
+    res.render('show', {title: article.title, article: article});
+  });
+});
+
+app.post('/blog/commenting', function(req, res) {
+  articleProvider.addCommentToArticle(req.param('articleId'), {
+    author: req.param('author'),
+    content: req.param('content'),
+    created_at: new Date().toLocaleString()
+  }, function(error, article) {
+    res.redirect('/blog/' + req.param('articleId'));
+  });
+});
+
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

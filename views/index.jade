@@ -3,13 +3,19 @@ extends layout
 block content
     div.articles
         - each article in articles
-            div.article
+            div.article-summary.col-md-11
                 div.article-thumbnail
-                    a(href="/blog/"+article._id)
-                        img(src=article.img, title=article.title)
-                div.article-heading
-                    h3.title= article.title
-                    span.created_at= article.created_at
-                div.article-body= article.content
-                div.article-footer
-                    a(class='btn btn-default btn-info', href='/blog/'+article._id) 详细内容
+                a(href="/blog/"+article._id)
+                    img.img-responsive(src=article.img, title=article.title)
+                    div.article-summary-heading
+                        h3.title= article.title
+                div.article-summary-content= article.content
+                div.article-summary-footer
+                    div.labels
+                        - each tag in article.tags
+                            span.label.label-info= tag
+                    div.comment-summary.pull-right
+                        span.glyphicon.glyphicon-comment (
+                                                         = article.comments.length
+                                                         )
+                     div.clearfix

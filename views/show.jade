@@ -1,0 +1,40 @@
+extends layout
+block content
+    div.article-show
+        legend= title
+            div.credit-line
+                - each tag in article.tags
+                    span.badge.article-badge= tag
+                span.created_at.pull-right= article.created_at
+        div.article-content= article.content
+    div.comment-block
+        legend 评论（
+               = article.comments.length
+               |）
+        div.contenting
+            form.form-horizontal(rule="form", method="post", action="/blog/commenting")
+                input(type="hidden", name="articleId", value=article._id)
+                div.col-sm-12
+                    div.input-group.input-group-lg
+                        span.input-group-addon
+                            span.glyphicon.glyphicon-comment
+                        input.form-control(type="text", name="content", id="content", placeholder="说点什么吧...")
+                    div.input-group.input-group-lg
+                        input.form-control(type="text", name="author", id="author", placeholder="留下您的大名")
+                        span.input-group-btn
+                            button.btn.btn-default.btn-danger(type="submit") 评论
+        div.comments
+            - each comment in article.comments
+                div.article-comment
+                    div.comment-heading
+                        span.author= comment.author
+                        span.craated_at= comment.created_at
+                    div.comment-body
+                        p= comment.content
+                    div.comment-footer
+                        li.vote
+                            span.glyphicon.glyphicon-chevron-up(title="赞成")
+                            span.glyphicon.glyphicon-chevron-down(title="反对")
+                        li.reply
+                            span 回复
+

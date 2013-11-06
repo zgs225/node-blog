@@ -2,12 +2,14 @@ body {
   font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   background-color: #e5e5e5;
 }
+.col-md-3.self {
+  padding: 0;
+}
 .sidebar {
   background: #9900cc no-repeat none;
   min-height: 100%;
   height: 100%;
   margin: 0;
-  padding: 0.5em;
   text-align: center;
   color: #ffffff;
   position: relative;
@@ -94,4 +96,35 @@ body {
 }
 .visible-xs .social-nav {
   padding-left: 8em;
+}
+.content {
+  position: relative;
+}
+.content .articles .article-summary:last-child {
+  border-bottom: none;
+}
+.content .articles .article-summary {
+  padding: 1em 0.5em;
+  background-color: #fff;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #46b8da;
+}
+.content .articles .article-summary a {
+  text-decoration: none;
+}
+.content .articles .article-summary .article-summary-content {
+  max-height: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5em 5px;
+}
+.content .articles .article-summary .article-summary-footer .labels span.label {
+  float: left;
+  margin: auto 3px;
+}
+.content .articles .article-summary .article-summary-footer .labels span.label:first-child {
+  margin-left: 0;
+}
+.content .articles .article-summary .article-summary-footer .labels span.label:last-child {
+  margin-right: 0;
 }
