@@ -5,6 +5,10 @@ body {
 .col-md-3.self {
   padding: 0;
 }
+.col-md-offset-3.col-md-9 {
+  padding-left: 15px;
+  padding-right: 0;
+}
 .sidebar {
   background: #9900cc no-repeat none;
   min-height: 100%;
@@ -48,14 +52,14 @@ body {
 .sidebar .main-nav ul li {
   font-size: 18px;
 }
-.sidebar .social-nav li {
-  float: left;
-  margin: 0 5px;
+.sidebar .social-nav {
+  margin-bottom: 0.5em;
 }
-.sidebar .social-nav li a {
+.sidebar .social-nav a {
   text-indent: -9999em;
   display: inline-block;
   border-radius: 50%;
+  margin: auto 3px;
   width: 30px;
   height: 30px;
   opacity: 0.6;
@@ -64,38 +68,38 @@ body {
   -webkit-transition: background-color 2s;
   -o-transition: background-color 2s;
 }
-.sidebar .social-nav li .weibo {
+.sidebar .social-nav a:first-child {
+  margin-left: 0;
+}
+.sidebar .social-nav a:last-child {
+  margin-right: 0;
+}
+.sidebar .social-nav .weibo {
   background: url('/images/weibo.png') center no-repeat #990066;
   border: solid 1px #990033;
 }
-.sidebar .social-nav li .weibo:hover,
-.sidebar .social-nav li .weibo:active {
+.sidebar .social-nav .weibo:hover,
+.sidebar .social-nav .weibo:active {
   background-color: #Ee66aA;
   border: solid 1px #Ee33aA;
 }
-.sidebar .social-nav li .google {
+.sidebar .social-nav .google {
   background: url('/images/google.png') center no-repeat #cc0000;
   border: solid 1px #990000;
 }
-.sidebar .social-nav li .google:hover,
-.sidebar .social-nav li .google:active {
+.sidebar .social-nav .google:hover,
+.sidebar .social-nav .google:active {
   background-color: #FF0066;
   border: solid 1px #FF00033;
 }
-.sidebar .social-nav li .github {
+.sidebar .social-nav .github {
   background: url('/images/github.png') center no-repeat #555555;
   border: solid 1px #444444;
 }
-.sidebar .social-nav li .github:hover,
-.sidebar .social-nav li .github:active {
+.sidebar .social-nav .github:hover,
+.sidebar .social-nav .github:active {
   background-color: #666666;
   border: solid 1px #555555;
-}
-.hidden-xs .social-nav {
-  padding-left: 6em;
-}
-.visible-xs .social-nav {
-  padding-left: 8em;
 }
 .content {
   position: relative;
@@ -113,10 +117,11 @@ body {
   text-decoration: none;
 }
 .content .articles .article-summary .article-summary-content {
-  max-height: 150px;
+  max-height: 143px;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0.5em 5px;
+  margin-bottom: 0.5em;
 }
 .content .articles .article-summary .article-summary-footer .labels span.label {
   float: left;

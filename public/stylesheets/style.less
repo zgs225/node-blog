@@ -21,6 +21,11 @@ body {
   padding: 0;
 }
 
+.col-md-offset-3.col-md-9 {
+  padding-left: 15px;
+  padding-right: 0;
+}
+
 .sidebar {
   background: @background-color no-repeat none;
   min-height: 100%;
@@ -48,8 +53,8 @@ body {
     ul {
       list-style: none;
       -webkit-padding-start: 0;
-         -moz-padding-start: 0;
-              padding-start: 0;
+      -moz-padding-start: 0;
+      padding-start: 0;
 
       li a {
         text-decoration: none;
@@ -67,60 +72,57 @@ body {
     font-size: 18px;
   }
 
-  .social-nav{
-    li {
-      float: left;
-      margin: 0 5px;
+  .social-nav {
+    margin-bottom: 0.5em;
+    a {
+      text-indent: -9999em;
+      display: inline-block;
+      border-radius: 50%;
+      margin: auto 3px;
+      width: 30px;
+      height: 30px;
+      opacity: 0.6;
+      .transition(background-color, 2s);
+    }
 
-      a {
-        text-indent: -9999em;
-        display: inline-block;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        opacity: 0.6;
-        .transition(background-color, 2s);
-      }
+    a:first-child {
+      margin-left: 0;
+    }
 
-      .weibo {
-        background: url('/images/weibo.png') center no-repeat #990066;
-        border: solid 1px #990033;
-      }
+    a:last-child {
+      margin-right: 0;
+    }
 
-      .weibo:hover, .weibo:active {
-        background-color: #Ee66aA;
-        border: solid 1px #Ee33aA;
-      }
+    .weibo {
+      background: url('/images/weibo.png') center no-repeat #990066;
+      border: solid 1px #990033;
+    }
 
-      .google {
-        background: url('/images/google.png') center no-repeat #CC0000;
-        border: solid 1px #990000;
-      }
+    .weibo:hover, .weibo:active {
+      background-color: #Ee66aA;
+      border: solid 1px #Ee33aA;
+    }
 
-      .google:hover, .google:active {
-        background-color: #FF0066;
-        border: solid 1px #FF00033;
-      }
+    .google {
+      background: url('/images/google.png') center no-repeat #CC0000;
+      border: solid 1px #990000;
+    }
 
-      .github {
-        background: url('/images/github.png') center no-repeat #555555;
-        border: solid 1px #444444;
-      }
+    .google:hover, .google:active {
+      background-color: #FF0066;
+      border: solid 1px #FF00033;
+    }
 
-      .github:hover, .github:active {
-        background-color: #666666;
-        border: solid 1px #555555;
-      }
+    .github {
+      background: url('/images/github.png') center no-repeat #555555;
+      border: solid 1px #444444;
+    }
+
+    .github:hover, .github:active {
+      background-color: #666666;
+      border: solid 1px #555555;
     }
   }
-}
-
-.hidden-xs .social-nav {
-  padding-left: 6em;
-}
-
-.visible-xs .social-nav{
-  padding-left: 8em;
 }
 
 .content {
@@ -141,10 +143,11 @@ body {
     }
 
     .article-summary-content {
-      max-height: 150px;
+      max-height: 143px;
       overflow: hidden;
       text-overflow: ellipsis;
       padding: 0.5em 5px;
+      margin-bottom: 0.5em;
     }
 
     .article-summary-footer {
