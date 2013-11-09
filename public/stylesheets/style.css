@@ -161,11 +161,6 @@ legend {
 .content .col-md-11 .article-show legend span.label:last-child {
   margin-right: 0;
 }
-.content .col-md-11 .article-show pre {
-  background: #ffffff none no-repeat;
-  border: none;
-  padding: 0;
-}
 .content .col-md-11 .comment-block .comments .article-comment {
   border-bottom: 1px solid #46b8da;
   margin-bottom: 1em;

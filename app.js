@@ -9,7 +9,6 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var moment = require('moment');
-var markdown = require('markdown').markdown;
 
 var ArticleProvider = require('./provider/article').ArticleProvider;
 var articleProvider = new ArticleProvider('localhost', 27017);
@@ -34,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // helper
 app.locals.moment = require('moment');
 app.locals.markdown = require('markdown').markdown;
+app.locals.entities = require('entities');
 
 // development only
 if ('development' == app.get('env')) {
@@ -43,7 +43,7 @@ if ('development' == app.get('env')) {
 // home page
 app.get('/', function(req, res) {
   articleProvider.findAll(function(error, articles) {
-    res.render('index', {title: "我的博文", articles: articles});
+    res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles});
   });
 });
 

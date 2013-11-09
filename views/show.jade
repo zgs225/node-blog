@@ -8,8 +8,7 @@ block content
                         span.label.label-info= tag
                     span.created_at.pull-right= moment(article.created_at).format("YYYY-MM-DD HH:mm:ss")
                     div.clearfix
-            div.article-content
-                pre= markdown.toHTML(article.content)
+            div.article-content= entities.decode(markdown.toHTML(article.content), 2)
         div.comment-block
             legend 评论（
                 = article.comments.length
