@@ -191,5 +191,5 @@ legend {
   box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 .content .article-new textarea {
-  min-height: 600px;
+  min-height: 400px;
 }

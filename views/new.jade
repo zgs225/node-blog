@@ -7,7 +7,7 @@ block content
             div.form-group
                 label.col-sm-2.control-label(for="title") 标题：
                 div.col-sm-8
-                    input.form-control(type="text", name="title", id="title")
+                    input.form-control(type="text", name="title", id="title", required)
                 div.help-block.col-sm-2
             div.form-group
                 label.col-sm-2.control-label(for="tags") 标签：
@@ -21,7 +21,11 @@ block content
                 div.help-block.col-sm-2
             div.form-group
                 div.col-sm-offset-2.col-sm-8
-                    textarea.form-control(name="content", id="content")
+                    p
+                        small.text-muted 支持使用markdown
+                        btn.btn.btn-default.btn-info.pull-right(type="button") 预览
+                        div.clearfix
+                    textarea.form-control(name="content", id="content", required)
             div.form-group
                 div.col-sm-offset-2.col-sm-10
                     button.btn.btn-default.btn-primary.hidden-xs(type="submit") 发表

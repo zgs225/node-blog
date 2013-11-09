@@ -2,6 +2,9 @@ $(function($) {
   var article_content_block = $('.article-show .article-content');
   var article_summary_block = $('.article-summary .article-summary-content');
 
+  var fullscreen  = "<span class='glyphicon glyphicon-resize-full' title='全屏'></span> ";
+  var resetscreen = "<span class='glyphicon glyphicon-resize-small' title='恢复'></span> ";
+
   // 评论框
   $('input#content').focus(function() {
     $('div.named').show();
@@ -29,4 +32,8 @@ $(function($) {
     }
     $(article_summary_block).html(summary);
   }
+
+  $('.screen-size-toggle').click(function() {
+  });
+
 });
