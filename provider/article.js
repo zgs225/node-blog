@@ -2,11 +2,12 @@
  * Created by yuez on 13-11-3.
  * 储存博客文章
  */
-var Db = require('mongodb').Db;
+var Db         = require('mongodb').Db;
 var Connection = require('mongodb').Connection;
-var Server = require('mongodb').Server;
-var BSON = require('mongodb').BSON;
-var ObjectID = require('mongodb').ObjectID;
+var Server     = require('mongodb').Server;
+var BSON       = require('mongodb').BSON;
+var ObjectID   = require('mongodb').ObjectID;
+var moment     = require('moment');
 
 var ArticleProvider = function (host, port) {
   this.db = new Db('node-mongo-blog', new Server(host, port, {auto_reconnect: true}, {}));
@@ -56,11 +57,11 @@ ArticleProvider.prototype.save = function (articles, callback) {
 
       for (var i = 0; i < articles.length; i++) {
         var article = articles[i];
-        article.created_at = new Date().toLocaleString();
+        article.created_at = moment().format('YYYY MMMM DD, h:mm:ss a');
         if (article.comments === undefined)
           article.comments = [];
         for (var j = 0; j < article.comments.length; i++) {
-          article.comments[j].created_at = new Date().toLocaleString();
+          article.comments[j].created_at = moment().format('YYYY MMMM DD, h:mm:ss a');
         }
         if (article.tags === undefined)
           article.tags = [];

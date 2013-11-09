@@ -2,12 +2,15 @@ body {
   font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   background-color: #e5e5e5;
 }
+legend {
+  border-bottom: solid 2px #46b8da;
+}
 .col-md-3.self {
   padding: 0;
 }
 .col-md-offset-3.col-md-9 {
   padding-left: 15px;
-  padding-right: 0;
+  padding-right: 15px;
 }
 .sidebar {
   background: #9900cc no-repeat none;
@@ -132,4 +135,66 @@ body {
 }
 .content .articles .article-summary .article-summary-footer .labels span.label:last-child {
   margin-right: 0;
+}
+.content .col-md-11 {
+  background: #ffffff none no-repeat;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+  padding: 1em;
+}
+.content .col-md-11 .article-show {
+  margin-bottom: 1em;
+}
+.content .col-md-11 .article-show legend {
+  padding-bottom: 5px;
+}
+.content .col-md-11 .article-show legend span {
+  font-size: 14px;
+}
+.content .col-md-11 .article-show legend span.label {
+  font-size: 12px;
+  float: left;
+  margin: auto 3px;
+}
+.content .col-md-11 .article-show legend span.label:first-child {
+  margin-left: 0;
+}
+.content .col-md-11 .article-show legend span.label:last-child {
+  margin-right: 0;
+}
+.content .col-md-11 .article-show pre {
+  background: #ffffff none no-repeat;
+  border: none;
+  padding: 0;
+}
+.content .col-md-11 .comment-block .comments .article-comment {
+  border-bottom: 1px solid #46b8da;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+.content .col-md-11 .comment-block .comments .article-comment .comment-heading .author {
+  margin-right: 1em;
+  font-size: 16px;
+  font-weight: bold;
+}
+.content .col-md-11 .comment-block .comments .article-comment .comment-heading .created_at {
+  font-size: 12px;
+}
+.content .col-md-11 .comment-block .comments .article-comment .comment-body {
+  margin: 0.5em auto;
+  text-indent: 10px;
+}
+.content .col-md-11 .comment-block .comments .article-comment .comment-footer li {
+  list-style: none;
+  float: left;
+  margin-right: 1em;
+}
+.content .col-md-11 .comment-block .comments .article-comment:last-child {
+  border-bottom: none;
+}
+.content .article-new {
+  background: #ffffff none no-repeat;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+.content .article-new textarea {
+  min-height: 600px;
 }

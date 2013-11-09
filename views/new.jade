@@ -1,28 +1,30 @@
 extends layout
 
 block content
-    div.article-new
-        h2= title
+    div.article-new.col-md-11
+        legend= title
         form.form-horizontal(method="post", rule="form")
             div.form-group
-                label.col-sm-1.control-label(for="title") 标题：
-                div.col-sm-9
+                label.col-sm-2.control-label(for="title") 标题：
+                div.col-sm-8
                     input.form-control(type="text", name="title", id="title")
                 div.help-block.col-sm-2
             div.form-group
-                label.col-sm-1.control-label(for="tags") 标签：
-                div.col-sm-9
+                label.col-sm-2.control-label(for="tags") 标签：
+                div.col-sm-8
                     input.form-control(type="text", name="tags", id="tags", placeholder="用逗号分割，如： 美食， 豆制品")
                 div.help-block.col-sm-2
             div.form-group
-                label.col-sm-1.control-label(for="image") 题图：
-                div.col-sm-9
+                label.col-sm-2.control-label(for="image") 题图：
+                div.col-sm-8
                     input.form-control(type="text", name="image", id="image")
                 div.help-block.col-sm-2
             div.form-group
-                div.col-sm-12
-                    textarea.form-cnotrol(name="content", id="content", cols="30")
+                div.col-sm-offset-2.col-sm-8
+                    pre
+                        textarea.form-control(name="content", id="content")
             div.form-group
-                div.col-sm-offset-3.col-sm-9
-                    button.btn.btn-default.btn-primary(type="submit") 发表
+                div.col-sm-offset-2.col-sm-10
+                    button.btn.btn-default.btn-primary.hidden-xs(type="submit") 发表
+                    button.btn.btn-default.btn-primary.btn-block.visible-xs(type="submit") 发表
 

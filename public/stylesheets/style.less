@@ -11,10 +11,17 @@
 }
 
 @background-color: #9900CC;
+@border-color: #46b8da;
+
+@box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
 
 body {
   font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   background-color: #e5e5e5;
+}
+
+legend {
+  border-bottom: solid 2px @border-color;
 }
 
 .col-md-3.self {
@@ -23,7 +30,7 @@ body {
 
 .col-md-offset-3.col-md-9 {
   padding-left: 15px;
-  padding-right: 0;
+  padding-right: 15px;
 }
 
 .sidebar {
@@ -135,8 +142,8 @@ body {
   .articles .article-summary {
     padding: 1em 0.5em;
     background-color: #fff;
-    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid #46b8da;
+    box-shadow: @box-shadow;
+    border-bottom: 1px solid @border-color;
 
     a {
       text-decoration: none;
@@ -167,3 +174,92 @@ body {
   }
 }
 
+// article show
+.content {
+
+  .col-md-11 {
+    background: #ffffff none no-repeat;
+    box-shadow: @box-shadow;
+    padding: 1em;
+
+    .article-show {
+      margin-bottom: 1em;
+
+      legend {
+        padding-bottom: 5px;
+
+        span {
+          font-size: 14px;
+        }
+
+        span.label {
+          font-size: 12px;
+          float: left;
+          margin: auto 3px;
+        }
+
+        span.label:first-child {
+          margin-left: 0;
+        }
+
+        span.label:last-child {
+          margin-right: 0;
+        }
+      }
+
+      pre {
+        background: #fff none no-repeat;
+        border: none;
+        padding: 0;
+      }
+    }
+
+    .comment-block {
+      .comments {
+        .article-comment {
+          border-bottom: 1px solid @border-color;
+          margin-bottom: 1em;
+          padding-bottom: 1em;
+
+          .comment-heading {
+            .author {
+              margin-right: 1em;
+              font-size: 16px;
+              font-weight: bold;
+            }
+
+            .created_at {
+              font-size: 12px;
+            }
+          }
+
+          .comment-body {
+            margin: 0.5em auto;
+            text-indent: 10px;
+          }
+
+          .comment-footer {
+            li {
+              list-style: none;
+              float: left;
+              margin-right: 1em;
+            }
+          }
+        }
+
+        .article-comment:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .article-new {
+    background: #fff none no-repeat;
+    box-shadow: @box-shadow;
+
+    textarea {
+      min-height: 600px;
+    }
+  }
+}

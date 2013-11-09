@@ -8,6 +8,8 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var moment = require('moment');
+var markdown = require('markdown').markdown;
 
 var ArticleProvider = require('./provider/article').ArticleProvider;
 var articleProvider = new ArticleProvider('localhost', 27017);
@@ -28,6 +30,10 @@ app.use(express.session());
 app.use(app.router);
 app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// helper
+app.locals.moment = require('moment');
+app.locals.markdown = require('markdown').markdown;
 
 // development only
 if ('development' == app.get('env')) {
@@ -67,7 +73,7 @@ app.post('/blog/commenting', function(req, res) {
   articleProvider.addCommentToArticle(req.param('articleId'), {
     author: req.param('author'),
     content: req.param('content'),
-    created_at: new Date().toLocaleString()
+    created_at: moment().format('YYYY MMMM DD, h:mm:ss a')
   }, function(error, article) {
     res.redirect('/blog/' + req.param('articleId'));
   });
