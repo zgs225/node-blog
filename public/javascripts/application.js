@@ -23,14 +23,16 @@ $(function($) {
   }
 
   if(article_summary_block.length > 0) {
-    var summary = $(article_summary_block).html();
-    $(article_summary_block).empty();
-    try {
-      summary = summary.replace(/&lt;/g, '<').replace(/(&gt;)|( &gt; )/g, '>').replace(/&#39;/g, "'").replace(/&quot;/g, '"');
-    } catch(e) {
-      console.log(e);
-    }
-    $(article_summary_block).html(summary);
+    $.each(article_summary_block, function(i, article_summary) {
+      var summary = $(this).html();
+      $(this).empty();
+      try {
+        summary = summary.replace(/&lt;/g, '<').replace(/(&gt;)|( &gt; )/g, '>').replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+      } catch(e) {
+        console.log(e);
+      }
+      $(this).html(summary);
+    });
   }
 
   $('.screen-size-toggle').click(function() {

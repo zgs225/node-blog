@@ -34,6 +34,37 @@ ArticleProvider.prototype.findAll = function (callback) {
   });
 };
 
+ArticleProvider.prototype.counter = function(option, callback) {
+  this.getCollection(function(error, article_collection) {
+    if(error) callback(error);
+    else {
+      if(typeof option == undefined) {
+        article_collection.count(function(error, result) {
+          if(error) callback(error);
+          else callback(null, result);
+        });
+      } else {
+        article_collection.count(option, function(error, result) {
+          if(error) callback(error);
+          else callback(null, result);
+        });
+      }
+    }
+  });
+};
+
+ArticleProvider.prototype.pagination = function(option, callback) {
+  this.getCollection(function(error, article_collection) {
+    if(error) callback(error);
+    else {
+      article_collection.find(option.conditions).skip(option.start).limit(option.limit).sort(option.sortBy).toArray(function(error, results) {
+        if(error) callback(error);
+        else callback(null, results);
+      });
+    }
+  });
+};
+
 ArticleProvider.prototype.findById = function (id, callback) {
   this.getCollection(function (error, article_collection) {
     if (error) callback(error)
