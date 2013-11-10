@@ -19,3 +19,14 @@ block content
                                                          = article.comments.length
                                                          )
                      div.clearfix
+        - if (page.current != 1 || page.total > page.current)
+             .pagination.col-md-11
+                 ul.pager
+                     - if (page.current != 1)
+                         li.previous
+                             - var prev = parseInt(page.current) - 1
+                                a(href="/" + prev) &larr; 上一页
+                     - if (page.total > page.current)
+                         li.next
+                             - var next = parseInt(page.current) + 1
+                                a(href="/" + next) 下一页 &rarr;

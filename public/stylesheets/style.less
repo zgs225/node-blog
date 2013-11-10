@@ -135,15 +135,12 @@ legend {
 .content {
   position: relative;
 
-  .articles .article-summary:last-child {
-    border-bottom: none;
-  }
 
   .articles .article-summary {
     padding: 1em 0.5em;
     background-color: #fff;
     box-shadow: @box-shadow;
-    border-bottom: 1px solid @border-color;
+    border-top: 1px solid @border-color;
 
     a {
       text-decoration: none;
@@ -172,10 +169,21 @@ legend {
       }
     }
   }
+
+  .articles .article-summary:first-child {
+    border-top: none;
+  }
 }
 
 // article show
 .content {
+
+  .pagination.col-md-11 {
+    margin-top: 0;
+    background: @background-color;
+    border-radius: 0 0 4px 4px;
+    box-shadow: @box-shadow;
+  }
 
   .col-md-11 {
     background: #ffffff none no-repeat;

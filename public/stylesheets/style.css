@@ -107,14 +107,11 @@ legend {
 .content {
   position: relative;
 }
-.content .articles .article-summary:last-child {
-  border-bottom: none;
-}
 .content .articles .article-summary {
   padding: 1em 0.5em;
   background-color: #fff;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #46b8da;
+  border-top: 1px solid #46b8da;
 }
 .content .articles .article-summary a {
   text-decoration: none;
@@ -135,6 +132,15 @@ legend {
 }
 .content .articles .article-summary .article-summary-footer .labels span.label:last-child {
   margin-right: 0;
+}
+.content .articles .article-summary:first-child {
+  border-top: none;
+}
+.content .pagination.col-md-11 {
+  margin-top: 0;
+  background: #9900cc;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 .content .col-md-11 {
   background: #ffffff none no-repeat;

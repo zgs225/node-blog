@@ -42,8 +42,38 @@ if ('development' == app.get('env')) {
 
 // home page
 app.get('/', function(req, res) {
-  articleProvider.findAll(function(error, articles) {
-    res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles});
+  var restraint = {
+    start: 0,
+    limit: 5,
+    sortBy: { created_at: -1 }
+  };
+  var pageMeta;
+  articleProvider.counter(restraint, function(error, result) {
+    pageMeta = {
+      current: 1,
+      total: result % 5 == 0 ? result / 5 : (result - result % 5) / 5 + 1
+    }
+  });
+  articleProvider.pagination(restraint, function(error, articles) {
+    res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles, page: pageMeta});
+  });
+});
+
+app.get('/:page', function(req, res) {
+  var restraint = {
+    start: (req.params.page - 1) * 5,
+    limit: 5,
+    sortBy: { created_at: -1}
+  };
+  var pageMeta;
+  articleProvider.counter(restraint, function(error, result) {
+    pageMeta = {
+      current: req.params.page,
+      total: result % 5 == 0 ? result / 5 : (result - result % 5) / 5 + 1
+    }
+  });
+  articleProvider.pagination(restraint, function(error, articles) {
+    res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles, page: pageMeta});
   });
 });
 

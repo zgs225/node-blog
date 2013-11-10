@@ -38,17 +38,10 @@ ArticleProvider.prototype.counter = function(option, callback) {
   this.getCollection(function(error, article_collection) {
     if(error) callback(error);
     else {
-      if(typeof option == undefined) {
-        article_collection.count(function(error, result) {
-          if(error) callback(error);
-          else callback(null, result);
-        });
-      } else {
-        article_collection.count(option, function(error, result) {
-          if(error) callback(error);
-          else callback(null, result);
-        });
-      }
+      article_collection.find(option.conditions).count(function(error, result) {
+        if(error) callback(error);
+        else callback(null, result);
+      });
     }
   });
 };
