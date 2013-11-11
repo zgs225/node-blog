@@ -110,7 +110,7 @@ legend {
 .content .articles .article-summary {
   padding: 1em 0.5em;
   background-color: #fff;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-top: 1px solid #46b8da;
 }
 .content .articles .article-summary a {
@@ -140,11 +140,11 @@ legend {
   margin-top: 0;
   background: #9933cc;
   border-radius: 0 0 4px 4px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .content .col-md-11 {
   background: #ffffff none no-repeat;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 1em;
 }
 .content .col-md-11 .article-show {
@@ -193,7 +193,7 @@ legend {
 }
 .content .article-new {
   background: #ffffff none no-repeat;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .content .article-new textarea {
   min-height: 400px;

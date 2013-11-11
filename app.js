@@ -59,22 +59,27 @@ app.get('/', function(req, res) {
   });
 });
 
-app.get('/:page', function(req, res) {
+app.get('/page/:index', function(req, res) {
   var restraint = {
-    start: (req.params.page - 1) * 5,
+    start: (req.params.index - 1) * 5,
     limit: 5,
     sortBy: { created_at: -1}
   };
   var pageMeta;
   articleProvider.counter(restraint, function(error, result) {
     pageMeta = {
-      current: req.params.page,
+      current: req.params.index,
       total: result % 5 == 0 ? result / 5 : (result - result % 5) / 5 + 1
     }
   });
   articleProvider.pagination(restraint, function(error, articles) {
     res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles, page: pageMeta});
   });
+});
+
+// archives
+app.get('/archives', function(req, res) {
+  res.render('archives', {title: "归档——乐正的博客"});
 });
 
 // new blog
