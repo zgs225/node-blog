@@ -2,5 +2,25 @@ extends layout
 
 block content
     .archives.col-md-11
-        h1= title
-        归档
+        - for archive in archives
+            legend= archive.year
+            .months
+                - for month in archive.months
+                    .month
+                        .col-sm-2= month
+                                  | 月
+                        .col-sm-10
+                            - for article in articles
+                                - if(moment(article.created_at).format('YYYY') == archive.year && moment(article.created_at).format('MM') == month)
+                                    .article-guide
+                                        .header
+                                            a(href="/blog/" + article._id)= article.title
+                                            span.glyphicon.glyphicon-calendar.pull-right
+                                                span.created_at= moment(article.created_at).format("MM-DD")
+                                            div.clearfix
+                                        .footer
+                                            .labels
+                                                - each tag in article.tags
+                                                    span.label.label-info= tag
+
+

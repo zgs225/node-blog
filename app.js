@@ -79,7 +79,51 @@ app.get('/page/:index', function(req, res) {
 
 // archives
 app.get('/archives', function(req, res) {
-  res.render('archives', {title: "归档——乐正的博客"});
+  articleProvider.findAll(function(error, articles) {
+    var archives = [];
+    for(var i=0; i<articles.length; i++) {
+      var article = articles[i];
+      var year = moment(article.created_at).format('YYYY');
+      var month = moment(article.created_at).format('MM');
+      if(archives.length == 0) {
+        archives.push({
+          year: year,
+          months: [month]
+        });
+        continue;
+      }
+      var existY = false;
+      var existM = false;
+      for(var j=0; j<archives.length; j++) {
+        if(archives[j].year == year) {
+          for(var m=0; m<archives[j].months.length; m ++) {
+            if(archives[j].months[m] == month) {
+              existM = true;
+              break;
+            }
+          }
+          if(!existM) {
+            archives[j].months.push(month);
+          }
+          existY = true;
+          break;
+        }
+      }
+      if(!existY) {
+        var archive = {
+          year: year,
+          months: [month]
+        };
+        archives.push(archive);
+      }
+    }
+    res.render('archives', {title: "归档——乐正的博客", archives: archives, articles: articles});
+  });
+});
+
+// intro
+app.get('/intro', function(req, res) {
+  res.render('intro', {title: "简介"});
 });
 
 // new blog
@@ -108,7 +152,7 @@ app.post('/blog/commenting', function(req, res) {
   articleProvider.addCommentToArticle(req.param('articleId'), {
     author: req.param('author'),
     content: req.param('content'),
-    created_at: moment().format('YYYY MMMM DD, h:mm:ss a')
+    created_at: new Date()
   }, function(error, article) {
     res.redirect('/blog/' + req.param('articleId'));
   });

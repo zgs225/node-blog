@@ -198,3 +198,38 @@ legend {
 .content .article-new textarea {
   min-height: 400px;
 }
+.content .archives .months {
+  margin-bottom: 1em;
+}
+.content .archives .months:first-child {
+  margin-bottom: 0;
+}
+.content .archives .months .month .col-sm-2 {
+  font-size: 18px;
+  color: #9933cc;
+  font-weight: bold;
+  border-left: 1px solid #9933cc;
+}
+.content .archives .months .month .col-sm-10 .article-guide {
+  margin: 1em auto;
+  border-top: 1px dashed #9933cc;
+}
+.content .archives .months .month .col-sm-10 .article-guide:first-child {
+  margin-top: 0;
+  border-top: none;
+}
+.content .archives .months .month .col-sm-10 .article-guide .header {
+  margin-top: 1em;
+}
+.content .archives .months .month .col-sm-10 .article-guide .header a:hover {
+  text-decoration: none;
+}
+.content .archives .months .month .col-sm-10 .article-guide .header span {
+  color: #9933cc;
+}
+.content .archives .months .month .col-sm-10 .article-guide .footer .labels span.label {
+  margin-left: 1em;
+}
+.content .archives .months .month .col-sm-10 .article-guide .footer .labels span.label:first-child {
+  margin-left: 0;
+}

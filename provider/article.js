@@ -81,11 +81,11 @@ ArticleProvider.prototype.save = function (articles, callback) {
 
       for (var i = 0; i < articles.length; i++) {
         var article = articles[i];
-        article.created_at = moment().format('YYYY MMMM DD, h:mm:ss a');
+        article.created_at = new Date();
         if (article.comments === undefined)
           article.comments = [];
         for (var j = 0; j < article.comments.length; i++) {
-          article.comments[j].created_at = moment().format('YYYY MMMM DD, h:mm:ss a');
+          article.comments[j].created_at = new Date();
         }
         if (article.tags === undefined)
           article.tags = [];
