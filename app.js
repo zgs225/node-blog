@@ -26,9 +26,9 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
-app.use(app.router);
 app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(app.router);
 
 // helper
 app.locals.moment = require('moment');
@@ -39,6 +39,13 @@ app.locals.entities = require('entities');
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+// error handler
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.render(500, {title: "Error 500"});
+});
+
 
 // home page
 app.get('/', function(req, res) {
@@ -144,7 +151,8 @@ app.post('/blog/new', function(req, res) {
 
 app.get('/blog/:id', function(req, res) {
   articleProvider.findById(req.params.id, function(error, article) {
-    res.render('show', {title: article.title, article: article});
+    if(article == null) res.render(404, {title: '404 Page Not Found'});
+    else res.render('show', {title: article.title, article: article});
   });
 });
 
@@ -159,6 +167,11 @@ app.post('/blog/commenting', function(req, res) {
 });
 
 app.get('/users', user.list);
+
+// 404
+app.get('*', function(req, res) {
+  res.render(404, {title: "404 Page Not Found"});
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

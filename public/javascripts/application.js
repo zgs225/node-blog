@@ -11,7 +11,7 @@ $(function($) {
     $('div.named').show();
   });
 
-  // 过略符号
+  // 过滤符号
   if(article_content_block.length > 0) {
     var content = $(article_content_block).html();
     $(article_content_block).empty();
