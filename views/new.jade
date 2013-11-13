@@ -3,7 +3,7 @@ extends layout
 block content
     div.article-new.col-md-11
         legend= title
-        form.form-horizontal(method="post", rule="form")
+        form.form-horizontal(method="post", rule="form", enctype="multipart/form-data")
             div.form-group
                 label.col-sm-2.control-label(for="title") 标题：
                 div.col-sm-8

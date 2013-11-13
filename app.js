@@ -28,6 +28,10 @@ app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.bodyParser({
+  uploadDir: "./public/images/article-images/",
+  keepExtensions: true
+}));
 app.use(app.router);
 
 // helper
@@ -139,10 +143,13 @@ app.get('/blog/new', function(req, res) {
 });
 
 app.post('/blog/new', function(req, res) {
+  console.log(req.body);
+  console.log(req.files);
+  console.log(req.files.path);
   articleProvider.save({
     title: req.param('title'),
     content: req.param('content'),
-    img: req.param('image') == null ? '/images/article-heading.jpg' : req.param('image'),
+    img: req.files.path == null ? '/images/article-heading.jpg' : req.files.path,
     tags: req.param('tags').split(/,|，/g)
   }, function() {
     res.redirect('/');
