@@ -145,11 +145,10 @@ app.get('/blog/new', function(req, res) {
 app.post('/blog/new', function(req, res) {
   console.log(req.body);
   console.log(req.files);
-  console.log(req.files.path);
   articleProvider.save({
     title: req.param('title'),
     content: req.param('content'),
-    img: req.files.path == null ? '/images/article-heading.jpg' : req.files.path,
+    img: req.files.image.path.split(/^public/)[1],
     tags: req.param('tags').split(/,|，/g)
   }, function() {
     res.redirect('/');
