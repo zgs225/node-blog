@@ -1,10 +1,6 @@
 $(function($) {
   var article_content_block = $('.article-show .article-content');
   var article_summary_block = $('.article-summary .article-summary-content');
-  var article_archive       = $('.content .archives');
-
-  var fullscreen  = "<span class='glyphicon glyphicon-resize-full' title='全屏'></span> ";
-  var resetscreen = "<span class='glyphicon glyphicon-resize-small' title='恢复'></span> ";
 
   // 评论框
   $('input#content').focus(function() {
@@ -36,7 +32,7 @@ $(function($) {
     });
   }
 
-  // image previous
+  // image preview
   $('input[type="file"][name="image"]').change(function() {
     readURL(this);
   });
@@ -52,5 +48,14 @@ $(function($) {
       $('.img-prev').hide();
     }
   }
+
+  // article preview
+  $('button.btn-prev').click(function() {
+    $('.article-prev').show();
+  });
+
+  $('.article-prev .cancel').click(function() {
+    $('.article-prev').hide();
+  });
 });
 
