@@ -12,11 +12,11 @@
 
 @background-color: #9933CC;
 @border-color: #46b8da;
-
 @box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+@font: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
 
 body {
-  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  font-family: @font;
   background-color: #e5e5e5;
 }
 
@@ -262,6 +262,12 @@ legend {
 
     textarea {
       min-height: 400px;
+      background-color: #2e3436;
+      color: #fafafa;
+      font-weight: bold;
+      border: none;
+      font-family: @font;
+      letter-spacing: 1px;
     }
   }
 
