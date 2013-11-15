@@ -26,18 +26,22 @@ block content
                 div.col-sm-offset-2.col-sm-8
                     p
                         small.text-muted 支持使用markdown
-                        button.btn.btn-default.btn-info.pull-right.btn-prev(type="button") 预览
+                        button.btn.btn-default.btn-info.pull-right.btn-prev(type="button", data-toggle="modal", data-target="#modal") 预览
                         div.clearfix
                     textarea.form-control(name="content", id="content", required, oninput="this.editor.update()")
             div.form-group
                 div.col-sm-offset-2.col-sm-10
                     button.btn.btn-default.btn-primary.hidden-xs(type="submit") 发表
                     button.btn.btn-default.btn-primary.btn-block.visible-xs(type="submit") 发表
-    .article-prev(style="display: none;")
-        .container
-            a.cancel(href="javascript:void(0);")
-                span.glyphicon.glyphicon-remove
-            .content#article-prev-content
+    .modal.fade#modal(tabindex="-1", role="dialog", aria-labelledby="modalLabel", aria-hidden="true")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+                    h4.modal-title#modalLabel 预览
+                .modal-body#article-prev-content
+                .modal-footer
+                    button.btn.btn-default(type="button", data-dismiss="modal") 关闭
     script(src="/javascripts/markdown.js")
     script(type="text/javascript")
         function Editor(input, preview) {
