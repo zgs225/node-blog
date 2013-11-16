@@ -51,6 +51,10 @@ pre {
   }
 }
 
+textarea {
+  resize: vertical;
+}
+
 .col-md-3.self {
   padding: 0;
 }
@@ -250,35 +254,31 @@ pre {
     .comment-block {
       .comments {
         .article-comment {
-          border-bottom: 1px solid @border-color;
+          border-bottom: 1px dashed @text-background-color;
           margin-bottom: 1em;
           padding-bottom: 1em;
-
           .comment-heading {
             .author {
               margin-right: 1em;
               font-size: 16px;
               font-weight: bold;
+              letter-spacing: 1px;
             }
-
             .created_at {
               font-size: 12px;
             }
-          }
 
+            .reply {
+              a {
+                text-decoration: none;
+                letter-spacing: 2px;
+              }
+            }
+          }
           .comment-body {
             margin: 0.5em auto;
           }
-
-          .comment-footer {
-            li {
-              list-style: none;
-              float: left;
-              margin-right: 1em;
-            }
-          }
         }
-
         .article-comment:last-child {
           border-bottom: none;
         }

@@ -28,6 +28,9 @@ pre code {
   color: #fafafa !important;
   font-size: 16px;
 }
+textarea {
+  resize: vertical;
+}
 .col-md-3.self {
   padding: 0;
 }
@@ -195,7 +198,7 @@ pre code {
   margin-right: 0;
 }
 .content .col-md-11 .comment-block .comments .article-comment {
-  border-bottom: 1px solid #993399;
+  border-bottom: 1px dashed #d8bfd8;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
@@ -203,17 +206,17 @@ pre code {
   margin-right: 1em;
   font-size: 16px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 .content .col-md-11 .comment-block .comments .article-comment .comment-heading .created_at {
   font-size: 12px;
 }
+.content .col-md-11 .comment-block .comments .article-comment .comment-heading .reply a {
+  text-decoration: none;
+  letter-spacing: 2px;
+}
 .content .col-md-11 .comment-block .comments .article-comment .comment-body {
   margin: 0.5em auto;
-}
-.content .col-md-11 .comment-block .comments .article-comment .comment-footer li {
-  list-style: none;
-  float: left;
-  margin-right: 1em;
 }
 .content .col-md-11 .comment-block .comments .article-comment:last-child {
   border-bottom: none;

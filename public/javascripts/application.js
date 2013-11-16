@@ -3,7 +3,7 @@ $(function($) {
   var article_summary_block = $('.article-summary .article-summary-content');
 
   // 评论框
-  $('input#content').focus(function() {
+  $('textarea#content').focus(function() {
     $('div.named').show();
   });
 

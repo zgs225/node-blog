@@ -28,7 +28,7 @@ block content
                             div.input-group
                                 span.input-group-addon
                                     span.glyphicon.glyphicon-comment
-                                input.form-control(type="text", name="content", id="content", placeholder="说点什么吧...", required)
+                                textarea.form-control(name="content", id="content", placeholder="说点什么吧...", required)
                     div.form-group
                         div.col-sm-offset-6.col-sm-6
                             div.input-group.named(style="display: none;")
@@ -40,15 +40,10 @@ block content
                     div.article-comment
                         div.comment-heading
                             span.author= comment.author
-                            span.created_at.text-muted= moment(moment.created_at).startOf('day').fromNow()
+                            span.created_at.text-muted= moment(comment.created_at).startOf('minute').fromNow()
+                            span.reply
+                                a.pull-right(href="javascript: void(0);") 回复
+                                .clearfix
                         div.comment-body
                             p= comment.content
-                        div.comment-footer
-                            // TODO 待增加
-                            li.vote
-                                span.glyphicon.glyphicon-chevron-up(title="赞成")
-                                span.glyphicon.glyphicon-chevron-down(title="反对")
-                            li.reply
-                                span 回复
-                            div.clearfix
 
