@@ -10,18 +10,45 @@
   -o-transition: @property @time;
 }
 
-@background-color: #9933CC;
-@border-color: #46b8da;
+@background-color: #9932CC;
+@border-color: #993399;
+@text-background-color: #D8BFD8;
 @box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 @font: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
 
 body {
   font-family: @font;
   background-color: #e5e5e5;
+  opacity: 0.9;
 }
 
 legend {
   border-bottom: solid 2px @border-color;
+  font-weight: bold;
+}
+
+blockquote {
+  border-color: @border-color;
+  background-color: @text-background-color;
+  opacity: 0.8;
+}
+
+a {
+  color: #DA70D6;
+  &:hover {
+    color: #BA55D3;
+  }
+}
+
+pre {
+  border-radius: 0;
+  border: none;
+  background-color: #2e3436 !important;
+  code {
+    background-color: #2e3436 !important;
+    color: #fafafa !important;
+    font-size: 16px;
+  }
 }
 
 .col-md-3.self {
@@ -67,10 +94,9 @@ legend {
         text-decoration: none;
         letter-spacing: 5px;
         color: #fff;
-      }
-
-      li a:hover, li a:active {
-        color: #ff0000;
+        &:hover {
+          color: @text-background-color;
+        }
       }
     }
   }
@@ -90,14 +116,12 @@ legend {
       height: 30px;
       opacity: 0.6;
       .transition(background-color, 2s);
-    }
-
-    a:first-child {
-      margin-left: 0;
-    }
-
-    a:last-child {
-      margin-right: 0;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     .weibo {
@@ -140,6 +164,8 @@ legend {
     padding: 1em 0.5em;
     background-color: #fff;
     box-shadow: @box-shadow;
+    -webkit-box-shadow: @box-shadow;
+    -moz-box-shadow: @box-shadow;
     border-top: 1px solid @border-color;
 
     a {
@@ -183,11 +209,15 @@ legend {
     background: @background-color;
     border-radius: 0 0 4px 4px;
     box-shadow: @box-shadow;
+    -webkit-box-shadow: @box-shadow;
+    -moz-box-shadow: @box-shadow;
   }
 
   .col-md-11 {
     background: #ffffff none no-repeat;
     box-shadow: @box-shadow;
+    -webkit-box-shadow: @box-shadow;
+    -moz-box-shadow: @box-shadow;
     padding: 1em;
 
     .article-show {
@@ -259,6 +289,8 @@ legend {
   .article-new {
     background: #fff none no-repeat;
     box-shadow: @box-shadow;
+    -webkit-box-shadow: @box-shadow;
+    -moz-box-shadow: @box-shadow;
 
     textarea {
       min-height: 400px;
@@ -269,7 +301,9 @@ legend {
       font-family: @font;
       letter-spacing: 1px;
       &:focus {
-        box-shadow: 0 0 10px #fafafa inset;
+        box-shadow: 0 0 5px #fafafa inset;
+        -webkit-box-shadow: 0 0 5px #fafafa inset;
+        -moz-box-shadow: 0 0 5px #fafafa inset;
       }
     }
   }

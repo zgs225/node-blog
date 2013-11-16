@@ -12,7 +12,7 @@ block content
             legend= title
                 div.credit-line
                     - each tag in article.tags
-                        span.label.label-info= tag
+                        span.label.label-success= tag
                     span.created_at.pull-right= moment(article.created_at).format("YYYY-MM-DD HH:mm:ss")
                     div.clearfix
             div.article-content= entities.decode(markdown.toHTML(article.content), 2)
