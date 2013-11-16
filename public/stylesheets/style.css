@@ -204,6 +204,9 @@ legend {
   font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   letter-spacing: 1px;
 }
+.content .article-new textarea:focus {
+  box-shadow: 0 0 10px #fafafa inset;
+}
 .content .archives .months {
   margin-bottom: 1em;
 }
