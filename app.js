@@ -24,7 +24,7 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
+app.use(express.cookieParser('hello kitty cookie miaow'));
 app.use(express.session());
 app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,6 +49,17 @@ app.use(function(err, req, res, next) {
   console.error(err.stack);
   res.render(500, {title: "Error 500"});
 });
+
+// permission security
+function requireRole(role) {
+  return function(req, res, next) {
+    if(req.session.user && req.session.user.role === role) {
+      next();
+    } else {
+      res.send(403);
+    }
+  }
+}
 
 
 // home page
@@ -138,11 +149,11 @@ app.get('/intro', function(req, res) {
 });
 
 // new blog
-app.get('/blog/new', function(req, res) {
+app.get('/blog/new', requireRole("admin"), function(req, res) {
   res.render('new', {title: '新的日志'});
 });
 
-app.post('/blog/new', function(req, res) {
+app.post('/blog/new', requireRole("admin"), function(req, res) {
   console.log(req.body);
   console.log(req.files);
   articleProvider.save({

@@ -2,6 +2,7 @@ body {
   font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   background-color: #e5e5e5;
   opacity: 0.9;
+  color: #3B3B3B;
 }
 legend {
   border-bottom: solid 2px #993399;
@@ -201,6 +202,7 @@ textarea {
   border-bottom: 1px dashed #d8bfd8;
   margin-bottom: 1em;
   padding-bottom: 1em;
+  color: #666666;
 }
 .content .col-md-11 .comment-block .comments .article-comment .comment-heading .author {
   margin-right: 1em;
