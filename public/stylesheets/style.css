@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif !important;
   background-color: #e5e5e5;
   opacity: 0.9;
   color: #3B3B3B;
@@ -135,10 +135,10 @@ textarea {
 .content .articles .article-summary {
   padding: 1em 0.5em;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-top: 1px solid #993399;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 .content .articles .article-summary a {
   text-decoration: none;
@@ -167,15 +167,15 @@ textarea {
   margin-top: 0;
   background: #9932cc;
   border-radius: 0 0 4px 4px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 .content .col-md-11 {
   background: #ffffff none no-repeat;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   padding: 1em;
 }
 .content .col-md-11 .article-show {
@@ -225,9 +225,9 @@ textarea {
 }
 .content .article-new {
   background: #ffffff none no-repeat;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 .content .article-new textarea {
   min-height: 400px;
@@ -312,4 +312,28 @@ textarea {
   left: 0;
   opacity: 0;
   filter: alpha(opacity=0);
+}
+.content .login-form .errors {
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  margin-top: 1em;
+  max-width: 330px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: #fafafa none no-repeat;
+}
+.content .login-form .form-signin {
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  background: #fafafa none no-repeat;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto 1em auto;
+}
+.content .login-form .form-signin input {
+  margin: 5px 0;
+  background-color: #fafafa;
 }

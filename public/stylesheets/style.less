@@ -10,14 +10,19 @@
   -o-transition: @property @time;
 }
 
+.card() {
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
 @background-color: #9932CC;
 @border-color: #993399;
 @text-background-color: #D8BFD8;
-@box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 @font: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
 
 body {
-  font-family: @font;
+  font-family: @font !important;
   background-color: #e5e5e5;
   opacity: 0.9;
   color: #3B3B3B;
@@ -168,10 +173,8 @@ textarea {
   .articles .article-summary {
     padding: 1em 0.5em;
     background-color: #fff;
-    box-shadow: @box-shadow;
-    -webkit-box-shadow: @box-shadow;
-    -moz-box-shadow: @box-shadow;
     border-top: 1px solid @border-color;
+    .card();
 
     a {
       text-decoration: none;
@@ -213,16 +216,12 @@ textarea {
     margin-top: 0;
     background: @background-color;
     border-radius: 0 0 4px 4px;
-    box-shadow: @box-shadow;
-    -webkit-box-shadow: @box-shadow;
-    -moz-box-shadow: @box-shadow;
+    .card();
   }
 
   .col-md-11 {
     background: #ffffff none no-repeat;
-    box-shadow: @box-shadow;
-    -webkit-box-shadow: @box-shadow;
-    -moz-box-shadow: @box-shadow;
+    .card();
     padding: 1em;
 
     .article-show {
@@ -290,9 +289,7 @@ textarea {
 
   .article-new {
     background: #fff none no-repeat;
-    box-shadow: @box-shadow;
-    -webkit-box-shadow: @box-shadow;
-    -moz-box-shadow: @box-shadow;
+    .card();
 
     textarea {
       min-height: 400px;
@@ -398,4 +395,30 @@ textarea {
       filter: alpha(opacity=0);
     }
   }
+
+  .login-form {
+    .errors {
+      .card();
+      margin-top: 1em;
+      max-width: 330px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      background: #fafafa none no-repeat;
+    }
+
+    .form-signin {
+      .card();
+      background: #fafafa none no-repeat;
+      max-width: 330px;
+      padding: 15px;
+      margin: 0 auto 1em auto;
+
+      input {
+        margin: 5px 0;
+        background-color: #fafafa;
+      }
+    }
+  }
+
 }
