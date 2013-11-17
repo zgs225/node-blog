@@ -1,17 +1,20 @@
 body {
-  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif !important;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑" !important;
   background-color: #e5e5e5;
   opacity: 0.9;
-  color: #3B3B3B;
+  color: #2B2B2B;
 }
 legend {
   border-bottom: solid 2px #993399;
-  font-weight: bold;
 }
 blockquote {
   border-color: #993399;
   background-color: #d8bfd8;
   opacity: 0.8;
+  font-size: 14px !important;
+}
+blockquote p {
+  font-size: 14px !important;
 }
 a {
   color: #DA70D6;
@@ -91,10 +94,10 @@ textarea {
   width: 30px;
   height: 30px;
   opacity: 0.6;
-  transition: background-color 2s;
-  -moz-transition: background-color 2s;
   -webkit-transition: background-color 2s;
+  -moz-transition: background-color 2s;
   -o-transition: background-color 2s;
+  transition: background-color 2s;
 }
 .sidebar .social-nav a:first-child {
   margin-left: 0;
@@ -235,7 +238,7 @@ textarea {
   color: #fafafa;
   font-weight: bold;
   border: none;
-  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
   letter-spacing: 1px;
 }
 .content .article-new textarea:focus {
@@ -294,10 +297,10 @@ textarea {
   border-radius: 4px;
   border: 1px solid #ccc;
   position: relative;
-  transition: all 1s;
-  -moz-transition: all 1s;
   -webkit-transition: all 1s;
+  -moz-transition: all 1s;
   -o-transition: all 1s;
+  transition: all 1s;
 }
 .content .article-new .add-pic-btn:hover {
   background-color: #fbfbfb;

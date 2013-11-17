@@ -4,10 +4,10 @@
 }
 
 .transition(@property, @time) {
-  transition: @property @time;
-  -moz-transition: @property @time;
   -webkit-transition: @property @time;
-  -o-transition: @property @time;
+     -moz-transition: @property @time;
+       -o-transition: @property @time;
+          transition: @property @time;
 }
 
 .card() {
@@ -19,24 +19,27 @@
 @background-color: #9932CC;
 @border-color: #993399;
 @text-background-color: #D8BFD8;
-@font: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+@font: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
 
 body {
   font-family: @font !important;
   background-color: #e5e5e5;
   opacity: 0.9;
-  color: #3B3B3B;
+  color: #2B2B2B;
 }
 
 legend {
   border-bottom: solid 2px @border-color;
-  font-weight: bold;
 }
 
 blockquote {
   border-color: @border-color;
   background-color: @text-background-color;
   opacity: 0.8;
+  font-size: 14px !important;
+  p {
+    font-size: 14px !important;
+  }
 }
 
 a {
