@@ -1,4 +1,19 @@
 extends layout
 
 block content
-    .login
+    .login-form
+        ul.errors
+            - for error in errors
+                li= error
+        form.form-horizontal(role="form", method="post", action="/login")
+            .form-group
+                label.control-label.col-sm-2(for="username") 用户名：
+                .col-sm-10
+                    input.form-control(id="username", name="username", type="text", require)
+            .form-group
+                label.control-label.col-sm-2(for="password") 密&nbsp;&nbsp;码：
+                .col-sm-10
+                    input.form-control(id="password", name="password", type="password", require)
+            .form-group
+                .col-sm-offset-2.col-sm-10
+                    button.btn.btn-default.btn-primary(type="submit") 登录
