@@ -152,7 +152,16 @@ app.post('/blog/commenting', function(req, res) {
   });
 });
 
+app.get('/admin', index.admin);
+
 app.get('/users', user.list);
+
+// login logout
+app.get('/login', user.logForm);
+
+app.post('/login', user.login);
+
+app.get('/logout', user.logout);
 
 // 404
 app.get('*', function(req, res) {

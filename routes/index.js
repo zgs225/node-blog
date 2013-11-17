@@ -44,3 +44,9 @@ exports.pages = function(req, res) {
   });
 };
 
+/*
+ * admin panel
+ */
+exports.admin = function(req, res) {
+  res.send("admin");
+};

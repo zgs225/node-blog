@@ -17,7 +17,7 @@ var ArticleProvider = function (host, port) {
 
 ArticleProvider.prototype.getCollection = function (callback) {
   this.db.collection('articles', function (error, article_collection) {
-    if (error) callback(error)
+    if (error) callback(error);
     else callback(null, article_collection)
   });
 };
@@ -27,7 +27,7 @@ ArticleProvider.prototype.findAll = function (callback) {
     if (error) callback(error);
     else {
       article_collection.find().sort({created_at: -1}).toArray(function (error, results) {
-        if (error) callback(error)
+        if (error) callback(error);
         else callback(null, results)
       });
     }
@@ -60,12 +60,12 @@ ArticleProvider.prototype.pagination = function(option, callback) {
 
 ArticleProvider.prototype.findById = function (id, callback) {
   this.getCollection(function (error, article_collection) {
-    if (error) callback(error)
+    if (error) callback(error);
     else {
       article_collection.findOne(
           {_id: article_collection.db.bson_serializer.ObjectID.createFromHexString(id)},
           function (error, result) {
-            if (error) callback(error)
+            if (error) callback(error);
             else callback(null, result)
           });
     }
@@ -74,10 +74,10 @@ ArticleProvider.prototype.findById = function (id, callback) {
 
 ArticleProvider.prototype.save = function (articles, callback) {
   this.getCollection(function (error, article_collection) {
-    if (error) callback(error)
+    if (error) callback(error);
     else {
       if (typeof(articles.length) == "undefined")
-        articles = [articles]
+        articles = [articles];
 
       for (var i = 0; i < articles.length; i++) {
         var article = articles[i];
@@ -99,14 +99,14 @@ ArticleProvider.prototype.save = function (articles, callback) {
 
 ArticleProvider.prototype.addCommentToArticle = function (articleId, comment, callback) {
   this.getCollection(function (error, article_collection) {
-    if (error) callback(error)
+    if (error) callback(error);
     else {
        article_collection.update(
            {_id: article_collection.db.bson_serializer.ObjectID.createFromHexString(articleId)},
            {'$push': {comments: comment}},
            function(error, article) {
-             if(error) callback(error)
-             else callback(null, article)
+             if(error) callback(error);
+             else callback(null, article);
            }
        );
     }
