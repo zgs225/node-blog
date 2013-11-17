@@ -56,7 +56,8 @@ exports.login = function(req, res) {
     if(err) throw err;
     var collection = db.collection('users');
     collection.findOne({
-      username: req.param("username")
+      username: req.param("username"),
+      password: req.param("password")
     }, function(err, user) {
       db.close();
       if(!user) {
@@ -65,12 +66,6 @@ exports.login = function(req, res) {
           errors: ["不存在此用户"]
         })
       } else {
-        if(!bcrypt.compareSync(user.password, bcrypt.hashSync(req.param("password"), bcrypt.genSaltSync(10)))) {
-          res.render('login', {
-            title: login_title,
-            errors: ["不存在此用户"]
-          })
-        }
         req.session.user = user;
         res.redirect('/admin');
       }
