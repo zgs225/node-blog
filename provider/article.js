@@ -27,7 +27,6 @@ ArticleProvider.prototype.findAll = function (callback) {
     if (error) callback(error);
     else {
       article_collection.find().sort({created_at: -1}).toArray(function (error, results) {
-        article_collection.db.close();
         if (error) callback(error);
         else callback(null, results)
       });
@@ -40,7 +39,6 @@ ArticleProvider.prototype.counter = function(option, callback) {
     if(error) callback(error);
     else {
       article_collection.find(option.conditions).count(function(error, result) {
-        article_collection.db.close();
         if(error) callback(error);
         else callback(null, result);
       });
@@ -53,7 +51,6 @@ ArticleProvider.prototype.pagination = function(option, callback) {
     if(error) callback(error);
     else {
       article_collection.find(option.conditions).skip(option.start).limit(option.limit).sort(option.sortBy).toArray(function(error, results) {
-        article_collection.db.close();
         if(error) callback(error);
         else callback(null, results);
       });
@@ -68,7 +65,6 @@ ArticleProvider.prototype.findById = function (id, callback) {
       article_collection.findOne(
           {_id: article_collection.db.bson_serializer.ObjectID.createFromHexString(id)},
           function (error, result) {
-            article_collection.db.close();
             if (error) callback(error);
             else callback(null, result)
           });
@@ -95,7 +91,6 @@ ArticleProvider.prototype.save = function (articles, callback) {
           article.tags = [];
       }
       article_collection.insert(articles, function () {
-        article_collection.db.close();
         callback(null, articles);
       });
     }
@@ -110,7 +105,6 @@ ArticleProvider.prototype.addCommentToArticle = function (articleId, comment, ca
            {_id: article_collection.db.bson_serializer.ObjectID.createFromHexString(articleId)},
            {'$push': {comments: comment}},
            function(error, article) {
-             article_collection.db.close();
              if(error) callback(error);
              else callback(null, article);
            }
