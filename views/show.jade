@@ -17,33 +17,17 @@ block content
                     div.clearfix
             div.article-content= entities.decode(markdown.toHTML(article.content), 2)
         div.comment-block
-            legend 评论（
-                = article.comments.length
-                | ）
-            div.commenting
-                form.form-horizontal(role="form", method="post", action="/blog/commenting")
-                    input(type="hidden", name="articleId", value=article._id)
-                    div.form-group
-                        div.col-sm-12
-                            div.input-group
-                                span.input-group-addon
-                                    span.glyphicon.glyphicon-comment
-                                textarea.form-control(name="content", id="content", placeholder="说点什么吧...", required)
-                    div.form-group
-                        div.col-sm-offset-6.col-sm-6
-                            div.input-group.named(style="display: none;")
-                                input.form-control(type="text", name="author", id="author", placeholder="留下您的大名", required)
-                                span.input-group-btn
-                                    button.btn.btn-default.btn-success(type="submit") 评论
-            div.comments
-                - each comment in article.comments
-                    div.article-comment
-                        div.comment-heading
-                            span.author= comment.author
-                            span.created_at.text-muted= moment(comment.created_at).startOf('minute').fromNow()
-                            span.reply
-                                a.pull-right(href="javascript: void(0);") 回复
-                                .clearfix
-                        div.comment-body
-                            p= comment.content
-
+            #disqus_thread
+            script(type="text/javascript")
+                var disqus_shortname = 'zgsDsq';
+                (function() {
+                  var dsq = document.createElement('script');
+                  dsq.type = 'text/javascript';
+                  dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            noscript Please enable JavaScript to view the
+                a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+            a.dsq-brlink(href="http://disqus.com") comments powerd by
+                span.logo-disqus Disqus
