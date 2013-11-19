@@ -1,0 +1,79 @@
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+Accessing Moment through the global scope is deprecated, and will be removed in an upcoming release.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+TypeError: /home/yuez/blog/node-blog/views/index.jade:22
+    20|                                                          )
+    21|                      div.clearfix
+  > 22|         - if (page.current != 1 || page.total > page.current)
+    23|              .pagination.col-md-11
+    24|                  ul.pager
+    25|                      - if (page.current != 1)
+
+Cannot read property 'current' of undefined
+    at eval (eval at <anonymous> (/home/yuez/blog/node-blog/node_modules/jade/lib/jade.js:152:8), <anonymous>:574:9)
+    at /home/yuez/blog/node-blog/node_modules/jade/lib/jade.js:153:35
+    at Object.exports.render (/home/yuez/blog/node-blog/node_modules/jade/lib/jade.js:197:10)
+    at Object.exports.renderFile (/home/yuez/blog/node-blog/node_modules/jade/lib/jade.js:233:18)
+    at View.exports.renderFile [as engine] (/home/yuez/blog/node-blog/node_modules/jade/lib/jade.js:218:21)
+    at View.render (/home/yuez/blog/node-blog/node_modules/express/lib/view.js:76:8)
+    at Function.app.render (/home/yuez/blog/node-blog/node_modules/express/lib/application.js:504:10)
+    at ServerResponse.res.render (/home/yuez/blog/node-blog/node_modules/express/lib/response.js:801:7)
+    at /home/yuez/blog/node-blog/routes/index.js:22:9
+    at /home/yuez/blog/node-blog/provider/article.js:55:14
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 7:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+/home/yuez/blog/node-blog/views/show.jade, line 22:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
