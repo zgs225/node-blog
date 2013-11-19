@@ -35,6 +35,9 @@ pre code {
 textarea {
   resize: vertical;
 }
+hr {
+  border-top-color: #dddddd;
+}
 .col-md-3.self {
   padding: 0;
 }
