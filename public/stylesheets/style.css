@@ -272,6 +272,9 @@ hr {
 .content .archives .months .month .col-sm-10 .article-guide .header {
   margin-top: 1em;
 }
+.content .archives .months .month .col-sm-10 .article-guide .header a {
+  font-size: 16px;
+}
 .content .archives .months .month .col-sm-10 .article-guide .header a:hover {
   text-decoration: none;
 }
@@ -279,7 +282,7 @@ hr {
   color: #9932cc;
 }
 .content .archives .months .month .col-sm-10 .article-guide .footer .labels span.label {
-  margin-left: 1em;
+  margin-left: 0.3em;
 }
 .content .archives .months .month .col-sm-10 .article-guide .footer .labels span.label:first-child {
   margin-left: 0;
