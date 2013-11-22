@@ -346,3 +346,29 @@ hr {
   margin: 5px 0;
   background-color: #fafafa;
 }
+.content .administration-panel .recent-article {
+  background-color: #555555;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+.content .administration-panel .recent-article .title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #fafafa;
+  letter-spacing: 1px;
+  margin: 5px;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.content .administration-panel .recent-article .title:hover,
+.content .administration-panel .recent-article .title:active {
+  color: #adadad;
+}
+.content .administration-panel .recent-article ul {
+  list-style: none;
+}
+.content .administration-panel .recent-article ul li {
+  display: inline;
+  margin-right: 10px;
+}

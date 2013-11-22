@@ -143,6 +143,27 @@ app.get('/blog/:id', function(req, res) {
   });
 });
 
+app.delete('/blog/:id', requireRole("admin"), function(req, res) {
+  articleProvider.findById(req.params.id, function(error, article) {
+    if(error) res.render(500, 'Error 500');
+    else {
+      articleProvider.delete(article);
+    }
+  });
+});
+
+app.put('/blog/:id', requireRole("admin"), function(req, res) {
+  // TODO
+   articleProvider.findById(req.param('id'), function(error, article) {
+      if(error) res.render(res.sender(500, {title: '500 Error'}));
+      else {
+        article.content = req.param('content');
+        article.title   = req.param('title');
+        articleProvider.update()
+      }
+   });
+});
+
 app.post('/blog/commenting', function(req, res) {
   articleProvider.addCommentToArticle(req.param('articleId'), {
     author: req.param('author'),
@@ -153,7 +174,7 @@ app.post('/blog/commenting', function(req, res) {
   });
 });
 
-app.get('/admin', index.admin);
+app.get('/admin', requireRole("admin"), index.admin);
 
 app.get('/users', user.list);
 

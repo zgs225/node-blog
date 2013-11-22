@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .col-md-11.administration-panel
+        legend 管理君的小剪刀
+        .row
+            .col-md-8.col-sm-8
+                - for article in articles
+                    .recent-article
+                        a.title(href='/blog/' + article._id)= article.title
+                        ul(id=article._id)
+                            li
+                                a(href="javascript: void(0);", title="编辑")
+                                    span.glyphicon.glyphicon-pencil
+                            li
+                                a(href="javascript: void(0);", title="删除")
+                                    span.glyphicon.glyphicon-remove
+                            li
+                                a(href="http://yuezme.disqus.com", title="评论管理", target="_blank")
+                                    span.glyphicon.glyphicon-comment
+            .col-md-4.col-sm-4
+                .new
+                    a(href="/blog/new", title="新的日志")
+                        span.glyphicon.glyphicon-plus
+                .all
+                    a(href="javascript: void(0);", title="所有日志")
+                        span.glyphicon.glyphicon-list-alt

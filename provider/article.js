@@ -97,6 +97,31 @@ ArticleProvider.prototype.save = function (articles, callback) {
   });
 };
 
+ArticleProvider.prototype.delete = function(article, callback) {
+  this.getCollection(function(error, article_collection) {
+    if(error) callback(error);
+    else {
+      if(article == null) return;
+      article_collection.remove(article, function(error) {
+        if(error) callback(error);
+        else callback(null);
+      });
+    }
+  });
+};
+
+ArticleProvider.prototype.update = function(article, callback) {
+  this.getCollection(function(error, article_collection) {
+     if(error) callback(error);
+    else {
+       article_collection.update({_id: article._id}, {$set: {title: article.title, content: article.content}}, function(error, article) {
+         if(error) callback(error);
+         else callback(null, article);
+       });
+     }
+  });
+};
+
 ArticleProvider.prototype.addCommentToArticle = function (articleId, comment, callback) {
   this.getCollection(function (error, article_collection) {
     if (error) callback(error);

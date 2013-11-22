@@ -48,5 +48,15 @@ exports.pages = function(req, res) {
  * admin panel
  */
 exports.admin = function(req, res) {
-  res.send("admin");
+  var restraint = {
+    start: 0,
+    limit: 5,
+    sortBy: {created_at: -1}
+  };
+  articleProvider.pagination(restraint, function(error, articles) {
+    res.render('admin', {
+      title: "我是一名管理君——乐正",
+      articles:articles
+    });
+  });
 };
