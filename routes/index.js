@@ -50,7 +50,7 @@ exports.pages = function(req, res) {
 exports.admin = function(req, res) {
   var restraint = {
     start: 0,
-    limit: 5,
+    limit: 10,
     sortBy: {created_at: -1}
   };
   articleProvider.pagination(restraint, function(error, articles) {

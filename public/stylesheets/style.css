@@ -42,8 +42,8 @@ hr {
   padding: 0;
 }
 .col-md-offset-3.col-md-9 {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .sidebar {
   background: #9932cc no-repeat none;
@@ -346,16 +346,32 @@ hr {
   margin: 5px 0;
   background-color: #fafafa;
 }
+.content .administration-panel {
+  background: #e5e5e5 none no-repeat;
+  box-shadow: none;
+  border-radius: 2px;
+}
 .content .administration-panel .recent-article {
-  background-color: #555555;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+  position: relative;
+  background-color: #fafafa;
+  height: 60px;
+  margin: 10px;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.content .administration-panel .recent-article:first-child {
+  margin-top: 0;
 }
 .content .administration-panel .recent-article .title {
+  color: #2B2B2B;
+  display: block;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
   font-weight: bold;
   font-size: 18px;
-  color: #fafafa;
   letter-spacing: 1px;
-  margin: 5px;
   -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
@@ -363,12 +379,45 @@ hr {
 }
 .content .administration-panel .recent-article .title:hover,
 .content .administration-panel .recent-article .title:active {
-  color: #adadad;
+  color: #666666;
 }
 .content .administration-panel .recent-article ul {
+  -webkit-padding-start: 10px;
   list-style: none;
 }
 .content .administration-panel .recent-article ul li {
   display: inline;
-  margin-right: 10px;
+  margin-right: 14px;
+}
+.content .administration-panel .new,
+.content .administration-panel .all {
+  font-size: 40px;
+  text-align: center;
+  height: 60px;
+  border-radius: 2px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  margin: 5px 10px;
+}
+.content .administration-panel .new:hover,
+.content .administration-panel .all:hover,
+.content .administration-panel .new:active,
+.content .administration-panel .all:active {
+  background: #9932cc;
+  color: #fafafa;
+}
+.content .administration-panel .new a,
+.content .administration-panel .all a {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.content .administration-panel .new a:hover,
+.content .administration-panel .all a:hover,
+.content .administration-panel .new a:active,
+.content .administration-panel .all a:active {
+  color: #fafafa;
 }

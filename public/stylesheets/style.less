@@ -73,8 +73,8 @@ hr {
 }
 
 .col-md-offset-3.col-md-9 {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .sidebar {
@@ -431,25 +431,59 @@ hr {
 
   // admin
   .administration-panel {
+    background: #e5e5e5 none no-repeat;
+    box-shadow: none;
+    border-radius: 2px;
     .recent-article {
-      background-color: #555555;
-      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+      position: relative;
+      background-color: #fafafa;
+      height: 60px;
+      margin: 10px;
+      .card();
+      &:first-child {
+        margin-top: 0;
+      }
       .title {
+        color: #2B2B2B;
+        display: block;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px;
         font-weight: bold;
         font-size: 18px;
-        color: #fafafa;
         letter-spacing: 1px;
-        margin: 5px;
         .transition(color, 0.5s);
         &:hover, &:active {
-          color: #adadad;
+          color: #666666;
         }
       }
       ul {
+        -webkit-padding-start: 10px;
         list-style: none;
         li {
           display: inline;
-          margin-right: 10px;
+          margin-right: 14px;
+        }
+      }
+    }
+
+    .new, .all {
+      font-size: 40px;
+      text-align: center;
+      height: 60px;
+      border-radius: 2px;
+      .transition(all, 0.5s);
+      margin: 5px 10px;
+
+      &:hover, &:active {
+        background: @background-color;
+        color: #fafafa;
+      }
+
+      a {
+        .transition(all, 0.5s);
+        &:hover, &:active {
+          color: #fafafa;
         }
       }
     }
