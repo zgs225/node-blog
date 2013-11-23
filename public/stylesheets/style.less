@@ -431,35 +431,30 @@ hr {
 
   // admin
   .administration-panel {
-    background: #e5e5e5 none no-repeat;
-    box-shadow: none;
     border-radius: 2px;
     .recent-article {
-      position: relative;
-      background-color: #fafafa;
-      height: 60px;
-      margin: 10px;
-      .card();
+      border-top: 1px solid #dddddd;
+      padding: 5px;
       &:first-child {
-        margin-top: 0;
+        border-top: none;
       }
       .title {
         color: #2B2B2B;
-        display: block;
         text-decoration: none;
-        margin: 5px;
-        padding: 5px;
         font-weight: bold;
         font-size: 18px;
         letter-spacing: 1px;
+        margin-bottom: 5px;
         .transition(color, 0.5s);
         &:hover, &:active {
           color: #666666;
         }
       }
       ul {
-        -webkit-padding-start: 10px;
+        -webkit-padding-start: 5px;
         list-style: none;
+        margin-bottom: 0;
+        margin-top: 5px;
         li {
           display: inline;
           margin-right: 14px;
@@ -470,20 +465,20 @@ hr {
     .new, .all {
       font-size: 40px;
       text-align: center;
-      height: 60px;
       border-radius: 2px;
       .transition(all, 0.5s);
-      margin: 5px 10px;
 
       &:hover, &:active {
         background: @background-color;
         color: #fafafa;
       }
-
       a {
         .transition(all, 0.5s);
         &:hover, &:active {
           color: #fafafa;
+        }
+        span {
+          top: 5px !important;
         }
       }
     }
