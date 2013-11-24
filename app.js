@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var http = require('http');
 var path = require('path');
 var moment = require('moment');
+var fs = require('fs');
 
 var ArticleProvider = require('./provider/article').ArticleProvider;
 var articleProvider = new ArticleProvider('localhost', 27017);
@@ -148,6 +149,9 @@ app.delete('/blog/:id', requireRole("admin"), function(req, res) {
     if(error) res.render(500, 'Error 500');
     else {
       articleProvider.deleteArticle(article);
+      fs.unlinkSync('./public'+article.img);
+      console.log('delete /public' + article.img);
+      res.send(200);
     }
   });
 });
