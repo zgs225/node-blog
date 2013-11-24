@@ -18,6 +18,18 @@ block content
                             li
                                 a(href="http://yuezme.disqus.com", title="评论管理", target="_blank")
                                     span.glyphicon.glyphicon-comment
+                            li
+                                a.slideUp(href="javascript: void(0);", title="收起", style="display: none;")
+                                    span.glyphicon.glyphicon-open
+                        form(role="form", method="post", action="/blog/" + article._id, style="display: none;")
+                            input(type="hidden", name="_method", value="put")
+                            .form-group
+                                input.form-control(type="text", name="title", required, placeholder="标题", value=article.title)
+                            .form-group
+                                textarea.form-control(name="content", required)= entities.decode(article.content, 2)
+                            .form-group
+                                button.btn.btn-default.btn-danger.hidden-xs(type="submit") 修改
+                                button.btn.btn-default.btn-danger.btn-block.visible-xs(type="submit") 修改
             .col-md-4.col-sm-4
                 .new
                     a(href="/blog/new", title="新的日志")

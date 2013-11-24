@@ -5,15 +5,15 @@
 
 .transition(@property, @time) {
   -webkit-transition: @property @time;
-     -moz-transition: @property @time;
-       -o-transition: @property @time;
-          transition: @property @time;
+  -moz-transition: @property @time;
+  -o-transition: @property @time;
+  transition: @property @time;
 }
 
 .card() {
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
 @background-color: #9932CC;
@@ -175,7 +175,6 @@ hr {
 
 .content {
   position: relative;
-
 
   .articles .article-summary {
     padding: 1em 0.5em;
@@ -438,6 +437,44 @@ hr {
       &:first-child {
         border-top: none;
       }
+
+      form {
+        margin-top: 10px;
+
+        .form-group {
+          margin: 0 auto;
+          &:last-child {
+            margin-top: 10px;
+          }
+        }
+
+        input {
+          background-color: @text-background-color;
+          font-weight: bold;
+          letter-spacing: 1px;
+          color: #444444;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        textarea {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          min-height: 400px;
+          background-color: #2e3436;
+          color: #fafafa;
+          font-weight: bold;
+          border: none;
+          font-family: @font;
+          letter-spacing: 1px;
+          &:focus {
+            box-shadow: 0 0 5px #fafafa inset;
+            -webkit-box-shadow: 0 0 5px #fafafa inset;
+            -moz-box-shadow: 0 0 5px #fafafa inset;
+          }
+        }
+      }
+
       .title {
         color: #444444;
         text-decoration: none;
@@ -457,6 +494,7 @@ hr {
         margin-top: 5px;
         li {
           display: inline;
+          font-size: 16px;
           margin-right: 14px;
         }
       }

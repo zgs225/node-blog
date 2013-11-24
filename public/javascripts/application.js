@@ -1,20 +1,20 @@
-$(function($) {
-  var remove_confirm_block  = '<div class="self-modal"><div class="header">删除?</div><div class="body"><p>你确认要删除我吗？</p><button class="btn btn-default btn-danger confirm" onclick="deleteArticle()">确认</button><button class="btn btn-default cancel" onclick="cancel()">取消</button> </div> </div>';
+$(function ($) {
+  var remove_confirm_block = '<div class="self-modal"><div class="header">删除?</div><div class="body"><p>你确认要删除我吗？</p><button class="btn btn-default btn-danger confirm" onclick="deleteArticle()">确认</button><button class="btn btn-default cancel" onclick="cancel()">取消</button> </div> </div>';
 
   // 评论框
-  $('textarea#content').focus(function() {
+  $('textarea#content').focus(function () {
     $('div.named').show();
   });
 
   // image preview
-  $('input[type="file"][name="image"]').change(function() {
+  $('input[type="file"][name="image"]').change(function () {
     readURL(this);
   });
 
   function readURL(input) {
-    if(input.files && input.files[0]) {
+    if (input.files && input.files[0]) {
       var reader = new FileReader();
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         $('.img-prev').attr('src', e.target.result).show();
       };
       reader.readAsDataURL(input.files[0]);
@@ -24,16 +24,16 @@ $(function($) {
   }
 
   // article preview
-  $('button.btn-prev').click(function() {
+  $('button.btn-prev').click(function () {
     $('.article-prev').show();
   });
 
-  $('.article-prev .cancel').click(function() {
+  $('.article-prev .cancel').click(function () {
     $('.article-prev').hide();
   });
 
   // enable tab in textarea
-  $(document).delegate('#content', 'keydown', function(e) {
+  $(document).delegate('#content', 'keydown', function (e) {
     var keyCode = e.keyCode || e.which;
 
     if (keyCode == 9) {
@@ -51,8 +51,20 @@ $(function($) {
   });
 
   // Remove article
-  $('.recent-article .remove').click(function() {
+  $('.recent-article .remove').click(function () {
     $('body').append($(remove_confirm_block).attr('id', $(this).parent().parent().attr('id')));
+  });
+
+  $('.recent-article .edit').click(function () {
+    $('form').hide();
+    $('.recent-article .slideUp').hide();
+    $(this).parent().parent().find('li .slideUp').show();
+    $(this).parent().parent().next('form').show('1000');
+  });
+
+  $('.recent-article .slideUp').click(function () {
+    $(this).hide();
+    $(this).parent().parent().next('form').hide('1000');
   });
 });
 
@@ -66,11 +78,11 @@ function deleteArticle() {
   var id = document.getElementsByClassName('self-modal')[0].id;
   var ele = document.getElementsByClassName('self-modal')[0];
   console.log(id);
-  if(window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+  if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
   else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  xmlhttp.open('delete', '/blog/'+id, false);
-  xmlhttp.onreadystatechange = function() {
-    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+  xmlhttp.open('delete', '/blog/' + id, false);
+  xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var e = document.getElementById(id).parentNode;
       e.parentNode.removeChild(e);
     }

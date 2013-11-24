@@ -25,11 +25,23 @@ module.exports = function (grunt) {
           'public/stylesheets/style.min.css': ['public/stylesheets/style.css']
         }
       }
+    },
+    less: {
+      production: {
+        options: {
+          cleancss: true
+        },
+        files: {
+          'public/stylesheets/style.css': ['public/stylesheets/style.less']
+        }
+      }
     }
   });
+
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
-  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['jshint', 'less', 'uglify', 'cssmin']);
 };

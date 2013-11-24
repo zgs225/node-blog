@@ -157,13 +157,14 @@ app.delete('/blog/:id', requireRole("admin"), function(req, res) {
 });
 
 app.put('/blog/:id', requireRole("admin"), function(req, res) {
-  // TODO
-   articleProvider.findById(req.param('id'), function(error, article) {
-      if(error) res.render(res.sender(500, {title: '500 Error'}));
+   articleProvider.findById(req.params.id, function(error, article) {
+      if(error) res.render(res.render(500, {title: '500 Error'}));
       else {
         article.content = req.param('content');
         article.title   = req.param('title');
-        articleProvider.update()
+        articleProvider.update(article, function() {
+          res.redirect('/admin');
+        });
       }
    });
 });
@@ -173,7 +174,7 @@ app.post('/blog/commenting', function(req, res) {
     author: req.param('author'),
     content: req.param('content'),
     created_at: new Date()
-  }, function(error, article) {
+  }, function () {
     res.redirect('/blog/' + req.param('articleId'));
   });
 });
