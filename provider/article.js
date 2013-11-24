@@ -97,14 +97,13 @@ ArticleProvider.prototype.save = function (articles, callback) {
   });
 };
 
-ArticleProvider.prototype.delete = function(article, callback) {
+ArticleProvider.prototype.deleteArticle = function(article, callback) {
   this.getCollection(function(error, article_collection) {
     if(error) callback(error);
     else {
       if(article == null) return;
       article_collection.remove(article, function(error) {
         if(error) callback(error);
-        else callback(null);
       });
     }
   });

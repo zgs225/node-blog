@@ -147,7 +147,7 @@ app.delete('/blog/:id', requireRole("admin"), function(req, res) {
   articleProvider.findById(req.params.id, function(error, article) {
     if(error) res.render(500, 'Error 500');
     else {
-      articleProvider.delete(article);
+      articleProvider.deleteArticle(article);
     }
   });
 });

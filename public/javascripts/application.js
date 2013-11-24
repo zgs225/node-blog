@@ -1,7 +1,5 @@
 $(function($) {
-  var article_content_block = $('.article-show .article-content');
-  var article_summary_block = $('.article-summary .article-summary-content');
-  var remove_confirm_block  = '<div class="self-modal"><div class="header">Confirm?</div><div class="body"><p>Do you want to delete the article?</p><button class="btn btn-default btn-danger confirm">Confirm</button><button class="btn btn-default cancel">Cancel</button> </div> </div>';
+  var remove_confirm_block  = '<div class="self-modal"><div class="header">删除?</div><div class="body"><p>你确认要删除我吗？</p><button class="btn btn-default btn-danger confirm" onclick="deleteArticle()">确认</button><button class="btn btn-default cancel" onclick="cancel()">取消</button> </div> </div>';
 
   // 评论框
   $('textarea#content').focus(function() {
@@ -58,5 +56,29 @@ $(function($) {
   $('.recent-article .remove').click(function() {
     $('body').append($(remove_confirm_block).attr('id', $(this).parent().parent().attr('id')));
   });
-
 });
+
+function cancel() {
+  var ele = document.getElementsByClassName('self-modal')[0];
+  ele.parentNode.removeChild(ele);
+}
+
+function deleteArticle() {
+  var xmlhttp;
+  var id = document.getElementsByClassName('self-modal')[0].id;
+  var ele = document.getElementsByClassName('self-modal')[0];
+  console.log(id);
+  if(window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+  else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  xmlhttp.open('delete', '/blog/'+id, false);
+  xmlhttp.onreadystatechange = function() {
+    if((xmlhttp.status >= 200 && xmlhttp.status < 300)
+        || xmlhttp.status == 304
+        || (navigator.userAgent.indexOf('Safari') >= 0 && typeof r.status == 'undefined')) {
+      var e = document.getElementById(id).parentNode;
+      e.parentNode.removeChild(e);
+    }
+  };
+  xmlhttp.send();
+  ele.parentNode.removeChild(ele); // 删除对话框
+}
