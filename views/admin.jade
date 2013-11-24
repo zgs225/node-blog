@@ -30,6 +30,17 @@ block content
                             .form-group
                                 button.btn.btn-default.btn-danger.hidden-xs(type="submit") 修改
                                 button.btn.btn-default.btn-danger.btn-block.visible-xs(type="submit") 修改
+                - if (page.current != 1 || page.total > page.current)
+                    .pagination.col-md-11.col-sm-12.col-xs-12
+                        ul.pager
+                            - if (page.current != 1)
+                                li.previous
+                                    - var prev = parseInt(page.current) - 1
+                                        a(href="/admin/page/" + prev) &larr; 上一页
+                            - if (page.total > page.current)
+                                li.next
+                                    - var next = parseInt(page.current) + 1
+                                        a(href="/admin/page/" + next) 下一页 &rarr;
             .col-md-4.col-sm-4
                 .new
                     a(href="/blog/new", title="新的日志")

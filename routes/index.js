@@ -6,16 +6,17 @@ var articleProvider = new ArticleProvider('localhost', 27017);
  */
 
 exports.index = function(req, res){
+  var limit = 5;
   var restraint = {
     start: 0,
-    limit: 5,
+    limit: limit,
     sortBy: { created_at: -1 }
   };
   var pageMeta;
   articleProvider.counter(restraint, function(error, result) {
     pageMeta = {
       current: 1,
-      total: result % 5 == 0 ? result / 5 : (result - result % 5) / 5 + 1
+      total: result % limit == 0 ? result / limit : (result - result % limit) / limit + 1
     }
   });
   articleProvider.pagination(restraint, function(error, articles) {
@@ -27,16 +28,17 @@ exports.index = function(req, res){
  * paginating index
  */
 exports.pages = function(req, res) {
+  var limit = 5;
   var restraint = {
-    start: (req.params.index - 1) * 5,
-    limit: 5,
+    start: (req.params.index - 1) * limit,
+    limit: limit,
     sortBy: { created_at: -1}
   };
   var pageMeta;
   articleProvider.counter(restraint, function(error, result) {
     pageMeta = {
       current: req.params.index,
-      total: result % 5 == 0 ? result / 5 : (result - result % 5) / 5 + 1
+      total: result % limit == 0 ? result / limit : (result - result % limit) / limit + 1
     }
   });
   articleProvider.pagination(restraint, function(error, articles) {
@@ -47,16 +49,48 @@ exports.pages = function(req, res) {
 /*
  * admin panel
  */
-exports.admin = function(req, res) {
+exports.adminPagination = function(req, res) {
+  var limit = 10;
   var restraint = {
-    start: 0,
-    limit: 10,
-    sortBy: {created_at: -1}
+    start: (req.params.index - 1) * limit,
+    limit: limit,
+    sortBy: { created_at: -1}
   };
+  var pageMeta;
+  articleProvider.counter(restraint, function(error, result) {
+    pageMeta = {
+      current: req.params.index,
+      total: result % limit == 0 ? result / limit : (result - result % limit) / limit + 1
+    }
+  });
   articleProvider.pagination(restraint, function(error, articles) {
     res.render('admin', {
       title: "我是一名管理君——乐正",
-      articles:articles
+      articles:articles,
+      page: pageMeta
+    });
+  });
+};
+
+exports.admin = function(req, res) {
+  var limit = 10;
+  var restraint = {
+    start: 0,
+    limit: limit,
+    sortBy: { created_at: -1 }
+  };
+  var pageMeta;
+  articleProvider.counter(restraint, function(error, result) {
+    pageMeta = {
+      current: 1,
+      total: result % limit == 0 ? result / limit : (result - result % limit) / limit + 1
+    }
+  });
+  articleProvider.pagination(restraint, function(error, articles) {
+    res.render('admin', {
+      title: "我是一名管理君——乐正",
+      articles:articles,
+      page: pageMeta
     });
   });
 };

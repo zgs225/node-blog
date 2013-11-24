@@ -179,6 +179,8 @@ app.post('/blog/commenting', function(req, res) {
   });
 });
 
+app.get('/admin/page/:page', requireRole("admin"), index.adminPagination);
+
 app.get('/admin', requireRole("admin"), index.admin);
 
 app.get('/users', user.list);
