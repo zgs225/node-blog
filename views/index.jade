@@ -17,7 +17,7 @@ block content
                     div.comment-summary.pull-right
                             a(href="/blog/"+article._id+"#disqus_thread")
                      div.clearfix
-        - if (page.current != 1 || page.total > page.current)
+        - if (page && page.current != 1 || page.total > page.current)
              .pagination.col-md-11.col-sm-12.col-xs-12
                  ul.pager
                      - if (page.current != 1)
