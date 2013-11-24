@@ -42,9 +42,7 @@ $(function($) {
       var end = $(this).get(0).selectionEnd;
 
       // set textarea value to: text before caret + tab + text after caret
-      $(this).val($(this).val().substring(0, start)
-          + "\t"
-          + $(this).val().substring(end));
+      $(this).val($(this).val().substring(0, start) + "\t" + $(this).val().substring(end));
 
       // put caret at right position again
       $(this).get(0).selectionStart =
@@ -72,9 +70,7 @@ function deleteArticle() {
   else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   xmlhttp.open('delete', '/blog/'+id, false);
   xmlhttp.onreadystatechange = function() {
-    if((xmlhttp.status >= 200 && xmlhttp.status < 300)
-        || xmlhttp.status == 304
-        || (navigator.userAgent.indexOf('Safari') >= 0 && typeof r.status == 'undefined')) {
+    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var e = document.getElementById(id).parentNode;
       e.parentNode.removeChild(e);
     }
