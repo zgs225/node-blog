@@ -16,6 +16,9 @@ block content
                     span.created_at.pull-right= moment(article.created_at).format("YYYY-MM-DD HH:mm:ss")
                     div.clearfix
             div.article-content= entities.decode(markdown.toHTML(article.content), 2)
+            script(type="text/javascript")
+                var ele = document.getElementsByClassName('article-content')[0];
+                ele.innerHTML = ele.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
         div.comment-block
             #disqus_thread
             script(type="text/javascript")

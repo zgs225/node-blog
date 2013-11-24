@@ -357,7 +357,7 @@ hr {
   border-top: none;
 }
 .content .administration-panel .recent-article .title {
-  color: #2B2B2B;
+  color: #444444;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
@@ -385,6 +385,7 @@ hr {
 .content .administration-panel .new,
 .content .administration-panel .all {
   font-size: 40px;
+  height: 57px;
   text-align: center;
   border-radius: 2px;
   -webkit-transition: all 0.5s;
@@ -414,5 +415,34 @@ hr {
 }
 .content .administration-panel .new a span,
 .content .administration-panel .all a span {
-  top: 5px !important;
+  top: 6px !important;
+}
+.self-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+}
+.self-modal .header,
+.self-modal .body {
+  padding: 5px 10px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fafafa;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.self-modal .header {
+  font-weight: bold;
+  color: #333333;
+  margin-top: 330px;
+}
+.self-modal .body button {
+  margin-right: 5px;
 }

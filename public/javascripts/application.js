@@ -1,36 +1,12 @@
 $(function($) {
   var article_content_block = $('.article-show .article-content');
   var article_summary_block = $('.article-summary .article-summary-content');
+  var remove_confirm_block  = '<div class="self-modal"><div class="header">Confirm?</div><div class="body"><p>Do you want to delete the article?</p><button class="btn btn-default btn-danger confirm">Confirm</button><button class="btn btn-default cancel">Cancel</button> </div> </div>';
 
   // 评论框
   $('textarea#content').focus(function() {
     $('div.named').show();
   });
-
-  // 过滤符号
-  if(article_content_block.length > 0) {
-    var content = $(article_content_block).html();
-    $(article_content_block).empty();
-    try {
-      content = content.replace(/&lt;/g, '<').replace(/(&gt;)|( &gt; )/g, '>').replace(/&#39;/g, "'").replace(/&quot;/g, '"');
-    } catch(e) {
-      console.log(e);
-    }
-    $(article_content_block).html(content);
-  }
-
-  if(article_summary_block.length > 0) {
-    $.each(article_summary_block, function(i, article_summary) {
-      var summary = $(this).html();
-      $(this).empty();
-      try {
-        summary = summary.replace(/&lt;/g, '<').replace(/(&gt;)|( &gt; )/g, '>').replace(/&#39;/g, "'").replace(/&quot;/g, '"');
-      } catch(e) {
-        console.log(e);
-      }
-      $(this).html(summary);
-    });
-  }
 
   // image preview
   $('input[type="file"][name="image"]').change(function() {
@@ -77,5 +53,10 @@ $(function($) {
           $(this).get(0).selectionEnd = start + 1;
     }
   });
-});
 
+  // Remove article
+  $('.recent-article .remove').click(function() {
+    $('body').append($(remove_confirm_block).attr('id', $(this).parent().parent().attr('id')));
+  });
+
+});
