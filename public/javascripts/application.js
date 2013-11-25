@@ -66,6 +66,13 @@ $(function ($) {
     $(this).hide();
     $(this).parent().parent().next('form').hide('1000');
   });
+
+  // pre code display as table
+  var codeBlocks = $('pre code');
+  $(codeBlocks).each(function(i, codeBlock) {
+    var codes = codeBlock.html().split('\n');
+    console.log(codes);
+  });
 });
 
 function cancel() {
