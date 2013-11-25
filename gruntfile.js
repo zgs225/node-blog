@@ -4,7 +4,8 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          'public/javascripts/application.min.js': ['public/javascripts/application.js']
+          'public/javascripts/application.min.js': ['public/javascripts/application.js'],
+          'public/javascripts/markdown.min.js': ['public/javascripts/markdown.js']
         }
       }
     },
