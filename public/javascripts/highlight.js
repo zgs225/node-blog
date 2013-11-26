@@ -1,0 +1,30 @@
+/**
+ * @Copyright <a href='mailto:zgs225@gmail.com>乐正</a>
+ * 2013年11月26日
+ */
+$(function($) {
+  // display code block as table
+  var codeBlocks = $('pre code');
+  $(codeBlocks).each(function (i, code_block) {
+    var table = $('<table class="code-block table-responsive"></table>');
+    var tbody =$('<tbody></tbody>');
+    var tr_ele = $('<tr class="codes"></tr>');
+    var line_num = $('<td class="line-num"></td>');
+    var line_code = $('<td class="line-code"></td>');
+    var pre = $('<pre></pre>');
+    var codes = $(code_block).html().split('\n');
+    for(var j=0; j<codes.length; j++) {
+      var code = codes[j];
+      var span_num = $('<span/>').html(j);
+      var span_code = $('<div/>').html(code+"<br>");
+      $(line_num).append($(span_num));
+      $(pre).append($(span_code));
+    }
+    $(tr_ele).append($(line_num));
+    $(line_code).append($(pre));
+    $(tr_ele).append($(line_code));
+    $(tbody).append($(tr_ele));
+    $(table).append($(tbody));
+    $(code_block).parent().replaceWith(table);
+  });
+});

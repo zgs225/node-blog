@@ -2,6 +2,7 @@ node_modules/
 .idea/
 *.log
 public/javascripts/application.min.js
+public/javascripts/highlight.min.js
 public/javascripts/markdown.min.js
 public/stylesheets/style.css
 public/stylesheets/style.min.css

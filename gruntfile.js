@@ -5,7 +5,8 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'public/javascripts/application.min.js': ['public/javascripts/application.js'],
-          'public/javascripts/markdown.min.js': ['public/javascripts/markdown.js']
+          'public/javascripts/markdown.min.js': ['public/javascripts/markdown.js'],
+          'public/javascripts/highlight.min.js': ['public/javascripts/highlight.js']
         }
       }
     },
