@@ -1,12 +1,13 @@
 /**
- * @Copyright <a href='mailto:zgs225@gmail.com>乐正</a>
+ * @Copyright <a href='mailto:zgs225@gmail.com'>乐正</a>
  * 2013年11月26日
  */
 $(function($) {
   // display code block as table
   var codeBlocks = $('pre code');
   $(codeBlocks).each(function (i, code_block) {
-    var table = $('<table class="code-block table-responsive"></table>');
+    var div = $('<div class="code-wrapper"></div> ');
+    var table = $('<table class="code-block "></table>');
     var tbody =$('<tbody></tbody>');
     var tr_ele = $('<tr class="codes"></tr>');
     var line_num = $('<td class="line-num"></td>');
@@ -25,6 +26,7 @@ $(function($) {
     $(tr_ele).append($(line_code));
     $(tbody).append($(tr_ele));
     $(table).append($(tbody));
-    $(code_block).parent().replaceWith(table);
+    $(div).append($(table));
+    $(code_block).parent().replaceWith(div);
   });
 });
