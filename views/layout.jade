@@ -13,45 +13,28 @@ html
             script(src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js")
     body(onload='prettyPrint()')
         div.row
-            div.col-md-3.affix.hidden-xs.hidden-sm.self(style="min-height: 100%; height: 100%")
-                div.sidebar
-                    div.profile
-                        img(src='/images/default.jpg')
-                        h1 乐正
-                        small 专注，简单
-                    div.main-nav
-                        ul.nav-list
-                            li.nav-item
-                                a(href='/') 日志
-                            li.nav-item
-                                a(href='/archives') 归档
-                            li.nav-item
-                                a(href='/intro') 简介
-                    div.social-nav
-                        a(class='weibo', href='http://weibo.com/zgs225', title='微博', target="_blank") 微博
-                        a(class='google', href='#', title='谷歌+', target="_blank") 谷歌
-                        a(class='github', href='https://github.com/zgs225', title='GitHub', target="_blank") GitHub
-            div.col-md-3.visible-xs.visible-sm.self
-                div.sidebar
-                    div.profile
-                        img(src='/images/default.jpg')
-                        h1 乐正
-                        small 专注，简单
-                    div.main-nav
-                        ul.nav-list
-                            li.nav-item
-                                a(href='/') 日志
-                            li.nav-item
-                                a(href='/archives') 归档
-                            li.nav-item
-                                a(href='/intro') 简介
-                    div.social-nav
-                        a(class='weibo', href='http://weibo.com/zgs225', title='微博', target="_blank") 微博
-                        a(class='google', href='#', title='谷歌+', target="_blank") 谷歌
-                        a(class='github', href='https://github.com/zgs225', title='GitHub', target="_blank") GitHub
-            div.col-md-9.col-md-offset-3
-                div.content.clearfix
-                    block content
+            .container
+                .col-md-12
+                    div.sidebar
+                        div.profile
+                            img(src='/images/default.jpg')
+                            h1 乐正
+                            small 专注，简单
+                        div.main-nav
+                            ul.nav-list
+                                li.nav-item
+                                    a(href='/') 日志
+                                li.nav-item
+                                    a(href='/archives') 归档
+                                li.nav-item
+                                    a(href='/intro') 简介
+                        div.social-nav
+                            a(class='weibo', href='http://weibo.com/zgs225', title='微博', target="_blank") 微博
+                            a(class='google', href='#', title='谷歌+', target="_blank") 谷歌
+                            a(class='github', href='https://github.com/zgs225', title='GitHub', target="_blank") GitHub
+                .col-md-12
+                    div.content.clearfix
+                        block content
             div.script-block
                 script(src='http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js')
                 script(src='/javascripts/bootstrap.min.js')

@@ -3,7 +3,7 @@ extends layout
 block content
     div.articles
         - each article in articles
-            div.article-summary.col-md-11
+            div.article-summary.self-content
                 div.article-thumbnail
                 a(href="/blog/"+article._id)
                     img.img-responsive(src=article.img, title=article.title)

@@ -57,13 +57,12 @@ hr {
   border-top-color: #dddddd;
 }
 
-.col-md-3.self {
-  padding: 0;
+.container {
+  max-width: 960px;
 }
 
-.col-md-offset-3.col-md-9 {
-  padding-left: 15px;
-  padding-right: 15px;
+.col-md-3.self {
+  padding: 0;
 }
 
 .sidebar {
@@ -168,7 +167,6 @@ hr {
     padding: 1em 0.5em;
     background-color: #fff;
     border-top: 1px solid @border-color;
-    .card();
 
     a {
       text-decoration: none;
@@ -206,16 +204,14 @@ hr {
 // article show
 .content {
 
-  .pagination.col-md-11 {
+  .pagination.self-content {
     margin-top: 0;
     background: @background-color;
     border-radius: 0 0 4px 4px;
-    .card();
   }
 
-  .col-md-11 {
+  .self-content {
     background: #ffffff none no-repeat;
-    .card();
     padding: 1em;
 
     .article-show {
@@ -285,7 +281,6 @@ hr {
 
   .article-new {
     background: #fff none no-repeat;
-    .card();
 
     textarea {
       min-height: 400px;
