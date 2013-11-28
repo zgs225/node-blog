@@ -9,7 +9,7 @@ block content
                     img.img-responsive(src=article.img, title=article.title)
                     div.article-summary-heading
                         h3.title= article.title
-                div.article-summary-content= entities.decode(markdown.toHTML(article.content), 2)
+                div.article-summary-content!= entities.decode(markdown.toHTML(article.content), 2)
                 div.article-summary-footer
                     div.labels
                         - each tag in article.tags
@@ -28,12 +28,6 @@ block content
                          li.next
                              - var next = parseInt(page.current) + 1
                                 a(href="/page/" + next) 下一页 &rarr;
-    script(type="text/javascript")
-        var eles = document.getElementsByClassName('article-summary-content');
-        for(var i=0; i<eles.length; i++) {
-          var ele = eles[i];
-          ele.innerHTML = ele.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-        }
     script(type="text/javascript")
         var disqus_shortname = "yuezme";
         (function() {
