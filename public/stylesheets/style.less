@@ -550,11 +550,12 @@ hr {
   margin-left: 5%;
   margin-right: 5%;
   position: relative;
+  border: 1px solid @text-background-color;
   table.code-block {
     border-collapse: separate;
-    border: 1px solid @text-background-color;
     .codes {
       .line-num {
+        border-right: 1px solid @text-background-color;
         padding: 10px;
         span {
           display: block;
@@ -564,12 +565,13 @@ hr {
       }
       .line-code {
         pre {
-          background: #fafafa;
+          background-color: #ffffff !important;
+          font-weight: bold;
           border: none;
           border-radius: 0;
           margin-bottom: 0;
-          border-left: 1px solid @text-background-color;
           white-space: pre;
+          padding-left: 10px;
           div {
             font-size: 14px;
           }

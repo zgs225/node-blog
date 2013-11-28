@@ -6,11 +6,12 @@ html
         title= title
         link(rel='stylesheet', href='/stylesheets/bootstrap.min.css', media='screen')
         link(rel='stylesheet', href='/stylesheets/style.min.css')
-        link(rel="stylesheet", href="http://yandex.st/highlightjs/7.4/styles/default.min.css")
+        link(rel='stylesheet', href="http://yandex.st/highlightjs/7.4/styles/default.min.css")
+        link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css')
         //if lt IE 9
             script(src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js")
             script(src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js")
-    body
+    body(onload='prettyPrint()')
         div.row
             div.col-md-3.affix.hidden-xs.hidden-sm.self(style="min-height: 100%; height: 100%")
                 div.sidebar
@@ -54,9 +55,6 @@ html
             div.script-block
                 script(src='http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js')
                 script(src='/javascripts/bootstrap.min.js')
-                //
-                    script(src="http://yandex.st/highlightjs/7.4/highlight.min.js")
-                    script(type="text/javascript")
-                        hljs.initHighlightingOnLoad();
                 script(src="/javascripts/application.min.js")
                 script(src="/javascripts/highlight.min.js")
+                script(src='http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js')

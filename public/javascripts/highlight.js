@@ -12,7 +12,7 @@ $(function($) {
     var tr_ele = $('<tr class="codes"></tr>');
     var line_num = $('<td class="line-num"></td>');
     var line_code = $('<td class="line-code"></td>');
-    var pre = $('<pre></pre>');
+    var pre = $('<pre class="prettyprint"></pre>');
     var codes = $(code_block).html().split('\n');
     for(var j=0; j<codes.length; j++) {
       var code = codes[j];
