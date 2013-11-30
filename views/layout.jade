@@ -10,6 +10,7 @@ html
         title= title
         link(rel='stylesheet', href='/stylesheets/bootstrap.min.css', media='screen')
         link(rel='stylesheet', href='/stylesheets/style.min.css')
+        link(rel='stylesheet', href='/stylesheets/jquery.fancybox.css', media='screen')
         link(rel='stylesheet', href="http://yandex.st/highlightjs/7.4/styles/default.min.css")
         link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css')
         //if lt IE 9
@@ -21,7 +22,7 @@ html
                 .col-md-12.col-xs-12
                     div.sidebar
                         div.profile
-                            img(src='/images/default.jpg')
+                            img.face(src='/images/default.jpg')
                             h1 乐正
                             small 专注，简单
                         div.main-nav
@@ -42,6 +43,7 @@ html
             div.script-block
                 script(src='http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js')
                 script(src='/javascripts/bootstrap.min.js')
+                script(src='/javascripts/jquery.fancybox.pack.js')
                 script(src="/javascripts/application.min.js")
                 script(src="/javascripts/highlight.min.js")
                 script(src='http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js')

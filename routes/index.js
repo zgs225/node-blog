@@ -1,6 +1,8 @@
 var ArticleProvider = require('../provider/article').ArticleProvider;
 var articleProvider = new ArticleProvider('localhost', 27017);
 
+var S = require('string');
+
 /*
  * GET home page.
  */
@@ -20,6 +22,11 @@ exports.index = function(req, res){
     }
   });
   articleProvider.pagination(restraint, function(error, articles) {
+    for(var i=0; i<articles.length; i++) {
+      var url = '\n\n [Read more](/blog/{{_id}})';
+      var value = { '_id': articles[i]._id };
+      articles[i].content = S(articles[i].content).truncate(120, S(url).template(value).s).s;
+    }
     res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles, page: pageMeta});
   });
 };
@@ -42,6 +49,11 @@ exports.pages = function(req, res) {
     }
   });
   articleProvider.pagination(restraint, function(error, articles) {
+    for(var i=0; i<articles.length; i++) {
+      var url = '\n\n [Read more](/blog/{{_id}})';
+      var value = { '_id': articles[i]._id };
+      articles[i].content = S(articles[i].content).truncate(120, S(url).template(value).s).s;
+    }
     res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles, page: pageMeta});
   });
 };
