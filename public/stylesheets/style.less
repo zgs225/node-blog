@@ -27,7 +27,7 @@ body {
   color: #222222;;
 }
 
-legend {
+h3.title-underscore {
   border-bottom: solid 2px @border-color;
 }
 
@@ -174,12 +174,22 @@ hr {
     }
 
     .article-summary-content {
-      max-height: 143px;
+      max-height: 160px;
+      line-height: 20px;
       overflow: hidden;
-      text-overflow: ellipsis;
-      -o-text-overflow: ellipsis;
+      text-overflow: clip;
+      -o-text-overflow: clip;
       padding: 0.5em 5px;
       margin-bottom: 0.5em;
+      h1, h2, h3, h4, h5, h6, hr {
+        line-height: 20px;
+      }
+      ul {
+        line-height: 20px;
+        li {
+          line-height: 20px;
+        }
+      }
     }
 
     .article-summary-footer {
@@ -221,7 +231,7 @@ hr {
       }
       margin-bottom: 1em;
 
-      legend {
+      h3.title-underscore {
         padding-bottom: 5px;
 
         span {

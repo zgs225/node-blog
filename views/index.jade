@@ -28,6 +28,11 @@ block content
                          li.next
                              - var next = parseInt(page.current) + 1
                                 a(href="/page/" + next) 下一页 &rarr;
+    script
+        var audioNodes = document.getElementsByTagName('audio');
+        for(var i=0; i<audioNodes.length; i++) {
+          audioNodes[i].removeAttribute('autoplay');
+        }
     script(type="text/javascript")
         var disqus_shortname = "yuezme";
         (function() {

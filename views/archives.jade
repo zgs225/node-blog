@@ -3,7 +3,7 @@ extends layout
 block content
     .archives.self-content.clearfix
         - for archive in archives
-            legend= archive.year
+            h3.title-underscore= archive.year
             .months
                 - for month in archive.months
                     .month

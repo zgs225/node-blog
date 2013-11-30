@@ -7,7 +7,7 @@ block content
                 - for error in errors
                     li= error
             form.form-signin(role="form", method="post", action="/login")
-                legend 登录
+                h3.title-underscore 登录
                 input.form-control(id="username", name="username", type="text", require, placeholder="用户名", autofocus)
                 input.form-control(id="password", name="password", type="password", require, placeholder="密码")
                 button.btn.btn-default.btn-primary(type="submit") 登录

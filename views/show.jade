@@ -3,7 +3,7 @@ extends layout
 block content
     div.self-content
         div.article-show
-            legend= title
+            h3.title-underscore= title
                 div.credit-line
                     - each tag in article.tags
                         span.label.label-success= tag
