@@ -25,7 +25,7 @@ exports.index = function(req, res){
     for(var i=0; i<articles.length; i++) {
       var url = '\n\n [Read more](/blog/{{_id}})';
       var value = { '_id': articles[i]._id };
-      articles[i].content = S(articles[i].content).truncate(120, S(url).template(value).s).s;
+      articles[i].content = S(articles[i].content).truncate(200, S(url).template(value).s).s;
     }
     res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles, page: pageMeta});
   });
@@ -52,7 +52,7 @@ exports.pages = function(req, res) {
     for(var i=0; i<articles.length; i++) {
       var url = '\n\n [Read more](/blog/{{_id}})';
       var value = { '_id': articles[i]._id };
-      articles[i].content = S(articles[i].content).truncate(120, S(url).template(value).s).s;
+      articles[i].content = S(articles[i].content).truncate(200, S(url).template(value).s).s;
     }
     res.render('index', {title: "乐正的博客——专注、简单与热爱生活", articles: articles, page: pageMeta});
   });

@@ -18,7 +18,7 @@ block content
                             a(href="/blog/"+article._id+"#disqus_thread")
                      div.clearfix
         - if (page && page.current != 1 || page.total > page.current)
-             .pagination.col-md-11.col-sm-12.col-xs-12
+             .pagination.col-md-12.col-sm-12.col-xs-12
                  ul.pager
                      - if (page.current != 1)
                          li.previous
@@ -32,6 +32,8 @@ block content
         var audioNodes = document.getElementsByTagName('audio');
         for(var i=0; i<audioNodes.length; i++) {
           audioNodes[i].removeAttribute('autoplay');
+          audioNodes[i].currentTime = 0;
+          audioNodes[i].stop();
         }
     script(type="text/javascript")
         var disqus_shortname = "yuezme";
