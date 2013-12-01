@@ -33,7 +33,7 @@ block content
         for(var i=0; i<audioNodes.length; i++) {
           audioNodes[i].removeAttribute('autoplay');
           audioNodes[i].currentTime = 0;
-          audioNodes[i].stop();
+          audioNodes[i].pause();
         }
     script(type="text/javascript")
         var disqus_shortname = "yuezme";
