@@ -66,6 +66,21 @@ $(function ($) {
     $(this).hide();
     $(this).parent().parent().next('form').hide('1000');
   });
+
+  // scroll to top
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 400) {
+      $('.scrollToTop').fadeIn();
+    } else {
+      $('.scrollToTop').fadeOut();
+    }
+  });
+
+  $('.scrollToTop a').click(function() {
+     $('body', 'html').animate({
+       scrollTop: 0
+     }, 800);
+  });
 });
 
 function cancel() {
