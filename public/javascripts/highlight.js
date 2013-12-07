@@ -16,7 +16,7 @@ $(function ($) {
     var codes = $(code_block).html().split('\n');
     for (var j = 0; j < codes.length; j++) {
       var code = codes[j];
-      var span_num = $('<span/>').html(j);
+      var span_num = $('<span/>').html(j+1);
       var div_code = $('<div/>').html(code + "<br>");
       $(line_num).append($(span_num));
       $(pre).append($(div_code));
