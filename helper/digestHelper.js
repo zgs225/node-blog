@@ -22,13 +22,13 @@ DigestHelper.prototype.digest = function(article_body, digest_length) {
     return article_body;
 
   for(var i=0; i<article_body.length; i++) {
+    if(count >= digest_length && return_flag === 0) break;
     if(open_symbol.indexOf(article_body[i]) != -1)
       return_flag ++;
     else if(close_symbol.indexOf(article_body[i]) != -1)
       return_flag --;
     contentArray.push(article_body[i]);
     count ++;
-    if(count >= digest_length && return_flag === 0) break;
   }
   return contentArray.join("");
 };
