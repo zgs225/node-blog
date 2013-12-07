@@ -1,8 +1,8 @@
 /**
  * Created by yuez on 13-12-7.
  */
-var close_symbol = "> ] }";
-var open_symbol = "< [ {";
+var close_symbol = ">]})";
+var open_symbol = "<[{(";
 
 var DigestHelper= function() {};
 
@@ -22,11 +22,11 @@ DigestHelper.prototype.digest = function(article_body, digest_length) {
     return article_body;
 
   for(var i=0; i<article_body.length; i++) {
-    if(count >= digest_length && return_flag === 0) break;
+    if(count >= digest_length && return_flag == 0) break;
     if(open_symbol.indexOf(article_body[i]) != -1)
-      return_flag ++;
-    else if(close_symbol.indexOf(article_body[i]) != -1)
-      return_flag --;
+      return_flag += 1;
+    else if(close_symbol.indexOf(article_body[i]) != -1 && return_flag > 0)
+      return_flag -= 1;
     contentArray.push(article_body[i]);
     count ++;
   }
