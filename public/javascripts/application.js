@@ -67,6 +67,7 @@ $(function ($) {
     $(this).parent().parent().next('form').hide('1000');
   });
 
+  /*
   // scroll to top
   $(window).scroll(function() {
     if($(this).scrollTop() > 400) {
@@ -81,6 +82,7 @@ $(function ($) {
        scrollTop: 0
      }, 800);
   });
+   */
 });
 
 function cancel() {
